@@ -65,12 +65,18 @@
 .about-me__info {
     font-family: 'Inter', Arial, sans-serif;
     max-width: 600px;
-    font-weight: 300;
-    font-size: 13px;
-    line-height: 15.73px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
     margin: 18px 0 8px;
     padding: 0;
     color: #FFFFFF;
+}
+
+.about-me__info-text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
 }
 
 .about-me__photo {
