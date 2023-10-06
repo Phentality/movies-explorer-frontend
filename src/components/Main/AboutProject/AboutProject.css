@@ -1,0 +1,119 @@
+.about-project {
+    max-width: 1280px;
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #202020;
+}
+
+.about-project__header {
+    max-width: 1140px;
+    margin: 0 auto 0;
+    border-bottom: 1px solid rgba(218, 218, 218, 1);
+}
+
+.about-project__header-text {
+    font-family: 'Inter', Arial, sans-serif;
+    max-width: 600px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26.63px;
+    margin: 0;
+    padding: 110px 0 23px;
+    color: #FFFFFF;
+}
+
+.about-project__content {
+    display: grid;
+    grid-template-columns: 550px 550px;
+    grid-template-rows: 24px 40px;
+    grid-auto-flow: row;
+    gap: 26px 40px;
+    padding: 0;
+    margin: 70px auto 0;
+    max-width: 1140px;
+    width: 100%;
+}
+
+.about-project__content-title {
+    font-family: 'Inter', Arial, sans-serif;
+    max-width: 550px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24.2px;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+}
+
+.about-project__content-text {
+    font-family: 'Inter', Arial, sans-serif;
+    max-width: 600px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+}
+
+.about-project__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 24px 40px;
+    grid-auto-flow: row;
+    gap: 26px 40px;
+    padding: 0;
+    margin: 70px auto 0;
+    max-width: 1140px;
+    width: 100%;
+}
+
+.about-project__time {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 36px 17px;
+    grid-auto-flow: row;
+    gap: 14px 0px;
+    padding: 0 0 110px;
+    margin: 70px auto 0;
+    max-width: 1140px;
+    width: 100%;
+}
+
+.about-project__backtime-image {
+    max-width: 228px;
+    height: 36px;
+    background-image: url(../../../images/backtime.svg);
+}
+
+.about-project__fronttime-image {
+    max-width: 912px;
+    height: 36px;
+    background-image: url(../../../images/fronttime.svg);
+}
+
+.about-project__text {
+    font-family: 'Inter', Arial, sans-serif;
+    max-width: 200px;
+    height: 18px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    margin: 0 auto 0;
+    padding: 9px 0 0;
+    line-height: 16.94px;
+}
+
+.about-project__white-text {
+    color: #FFFFFF;
+}
+
+.about-project__gray-text {
+    padding: 0;
+    font-weight: 500;
+    color: #8B8B8B;
+}
+
+
+

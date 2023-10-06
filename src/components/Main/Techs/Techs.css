@@ -1,0 +1,74 @@
+.techs {
+    max-width: 1280px;
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #272727;
+}
+
+.techs__header {
+    max-width: 1140px;
+    margin: 0 auto 0;
+    border-bottom: 1px solid rgba(218, 218, 218, 1);
+}
+
+.techs__header-text {
+    font-family: 'Inter', Arial, sans-serif;
+    max-width: 600px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26.63px;
+    margin: 0;
+    padding: 100px 0 23px;
+    color: #FFFFFF;
+}
+
+.techs__text {
+    font-family: 'Inter', Arial, sans-serif;
+    max-width: 460px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0 auto 100px;
+    color: #FFFFFF;
+}
+
+.techs__title {
+    max-width: 600px;
+    font-size: 50px;
+    line-height: 58px;
+    margin: 90px auto 26px;
+}
+
+.techs__header-text {
+    font-family: 'Inter', Arial, sans-serif;
+    max-width: 600px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26.63px;
+    margin: 0;
+    padding: 100px 0 23px;
+    color: #FFFFFF;
+}
+
+.techs__card-text {
+    font-size: 14px;
+    line-height: 16.94px;
+    margin: 21px auto 22px;
+}
+
+.techs__technologies {
+    max-width: 690px;
+    margin: 0 auto 0;
+    padding: 0 0 100px;
+    list-style-type: none;
+    display: flex;
+    justify-content:space-around;
+}
+
+.techs__card {
+    width: 90px;
+    background-image: url(../../../images/techCardImage.svg);
+}
+
