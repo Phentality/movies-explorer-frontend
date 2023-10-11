@@ -5,7 +5,7 @@ import photo from '../../../images/Foto.png';
 function AboutMe() {
 
     return (
-        <div className='about-me'>
+        <section className='about-me'>
             <header className='about-me__header'>
                 <h1 className='about-me__header-text'>Студент</h1>
             </header>
@@ -21,7 +21,7 @@ function AboutMe() {
                     <img className='about-me__photo' src={photo} alt="Логотип" />
                 </div>
             </section>
-        </div>)
+        </section>)
 }
 
 export default AboutMe;

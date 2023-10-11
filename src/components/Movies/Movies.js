@@ -1,29 +1,27 @@
 import React from 'react';
 import Header from '../Header/Header';
-import Promo from './Promo/Promo';
-import AboutProject from './AboutProject/AboutProject';
-import Aboutme from './AboutMe/AboutMe';
-import Portfolio from './Portfolio/Portfolio';
-import Techs from './Techs/Techs';
 import Footer from '../Footer/Footer';
+import SearchForm from './SearchForm/SearchForm';
+import FilterCheckBox from './FilterCheckBox/FilterCheckBox';
+import MoviesCardList from './MoviesCardList/MoviesCardList';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-function Main(props) {
+function Movies(props) {
   const currentUser = React.useContext(CurrentUserContext);
+
+
 
   return (
     <section>
       <CurrentUserContext.Provider value={currentUser}>
         <Header />
-        <Promo />
-        <AboutProject />
-        <Techs />
-        <Aboutme />
-        <Portfolio />
+        <SearchForm />
+        <FilterCheckBox />
+        <MoviesCardList />
         <Footer />
       </CurrentUserContext.Provider>
     </section>
   )
 }
 
-export default Main;
+export default Movies;

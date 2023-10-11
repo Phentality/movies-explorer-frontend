@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import logoPath from '../images/logo.svg'
+import logoPath from '../../images/logo.svg';
 
 
 function Header(props) {
@@ -36,10 +36,24 @@ function Header(props) {
     }
   }
 
+  function handleBackground() {
+    if (location.pathname === '/') {
+      return ("header");
+    }
+    else {
+      return ('header header-black');
+    }
+  }
+
   return (
-    <header className="header">
-      <img className="header__logo" src={logoPath} alt="Лого" />
-      {handleNav()}
+    <header className={handleBackground()}>
+      <div className='header__content'>
+        <button className="header__logo"> <img src={logoPath} alt="Лого" /> </button>
+        <div className="header__button-container">
+          <button className='header__reg-button'>Регистрация</button>
+          <button className="header__enter-button" aria-label="Войти" name="enter" value="">Войти</button>
+        </div>
+      </div>
     </header>)
 }
 

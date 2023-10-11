@@ -1,5 +1,4 @@
 import React from 'react';
-import logoPath from '../../../images/logo.svg';
 import contentLogoPath from '../../../images/Landing-logo.svg';
 
 
@@ -7,13 +6,7 @@ function Promo() {
 
   return (
     <div className='promo'>
-      <header className="promo-header">
-        <img className="promo-header__logo" src={logoPath} alt="Лого" />
-        <div className="promo-header__button-container">
-          <button className='promo-header__reg-button'>Регистрация</button>
-          <button className="promo-header__enter-button" aria-label="Войти" name="enter" value="">Войти</button>
-        </div>
-      </header>
+      
       <section className='promo-content'>
         <div className='promo-content__container'>
           <div className='promo-content__text-content'>

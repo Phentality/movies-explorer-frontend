@@ -3,7 +3,7 @@ import React from 'react';
 function AboutProject() {
 
   return (
-    <div className='about-project'>
+    <section className='about-project'>
       <header className='about-project__header'>
         <h1 className='about-project__header-text'>О проекте</h1>
       </header>
@@ -23,7 +23,7 @@ function AboutProject() {
         <p className='about-project__text about-project__gray-text'>Back-end</p>
         <p className='about-project__text about-project__gray-text'>Front-end</p>
       </div>
-    </div>)
+    </section>)
 }
 
 export default AboutProject;
