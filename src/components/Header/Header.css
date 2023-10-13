@@ -10,6 +10,10 @@
     background-color: #202020;
 }
 
+.header-none {
+    display: none;
+}
+
 .header__content {
     max-width: 1140px;
     margin: 0px auto 0px;
@@ -43,7 +47,7 @@
 }
 
 .header__reg-button {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 77px;
     max-height: 16px;
     font-weight: 500;
@@ -62,7 +66,7 @@
 }
 
 .header__enter-button {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     width: 76px;
     max-height: 32px;
     font-weight: 500;

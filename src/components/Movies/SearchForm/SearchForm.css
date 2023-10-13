@@ -20,7 +20,7 @@
 
 .search-form__form {
     max-width: 1010px;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     font-weight: 400;
     font-size: 18px;
     line-height: 20px;
@@ -42,7 +42,7 @@
 .search-form__button {
     width: 100px;
     max-height: 52px;
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     font-weight: 500;
     font-size: 14px;
     line-height: 18px;

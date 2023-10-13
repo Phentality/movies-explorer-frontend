@@ -14,7 +14,7 @@
 }
 
 .about-me__header-text {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 600px;
     font-weight: 400;
     font-size: 22px;
@@ -53,7 +53,7 @@
 }
 
 .about-me__title {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 600px;
     font-weight: 400;
     font-size: 50px;
@@ -64,7 +64,7 @@
 }
 
 .about-me__info {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 600px;
     font-weight: 500;
     font-size: 18px;

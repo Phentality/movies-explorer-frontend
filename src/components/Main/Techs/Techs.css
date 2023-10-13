@@ -13,7 +13,7 @@
 }
 
 .techs__header-text {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 600px;
     font-weight: 400;
     font-size: 22px;
@@ -24,7 +24,7 @@
 }
 
 .techs__text {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 460px;
     font-weight: 400;
     font-size: 14px;
@@ -42,7 +42,7 @@
 }
 
 .techs__header-text {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 600px;
     font-weight: 400;
     font-size: 22px;

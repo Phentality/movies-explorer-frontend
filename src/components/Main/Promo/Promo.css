@@ -31,7 +31,7 @@
 }
 
 .promo-content__title {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 640px;
     font-weight: 400;
     font-size: 50px;
@@ -42,7 +42,7 @@
 }
 
 .promo-content__info {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 310px;
     font-weight: 300;
     font-size: 13px;
@@ -60,7 +60,7 @@
 }
 
 .promo-content__button {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     width: 130px;
     height: 36px;
     font-weight: 500;

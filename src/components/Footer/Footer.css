@@ -16,7 +16,7 @@
 }
 
 .footer__text {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 320px;
     font-weight: 400;
     font-size: 13px;

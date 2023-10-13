@@ -12,7 +12,7 @@
 }
 
 .portfolio__title {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 250px;
     font-weight: 400;
     font-size: 18px;
@@ -33,7 +33,7 @@
 }
 
 .portfolio__link-text {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 880px;
     font-weight: 400;
     font-size: 30px;

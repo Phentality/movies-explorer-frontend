@@ -1,13 +1,13 @@
 import React from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import logoPath from '../../images/logo.svg';
 
 
 function Header(props) {
-  const navigate = useNavigate();
+  /*const navigate = useNavigate();*/
   const location = useLocation();
 
-  function signOut() {
+/*  function signOut() {
     localStorage.removeItem('jwt');
     localStorage.removeItem('email');
     navigate('/signin', { replace: true });
@@ -34,11 +34,17 @@ function Header(props) {
         </div>
       )
     }
-  }
+  }*/
 
   function handleBackground() {
     if (location.pathname === '/') {
       return ("header");
+    }
+    if (location.pathname === '/signin') {
+      return ("header-none");
+    }
+    if (location.pathname === '/signup') {
+      return ("header-none");
     }
     else {
       return ('header header-black');

@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import SearchForm from './SearchForm/SearchForm';
 import FilterCheckBox from './FilterCheckBox/FilterCheckBox';
@@ -14,7 +13,6 @@ function Movies(props) {
   return (
     <section>
       <CurrentUserContext.Provider value={currentUser}>
-        <Header />
         <SearchForm />
         <FilterCheckBox />
         <MoviesCardList />

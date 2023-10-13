@@ -13,7 +13,7 @@
 }
 
 .about-project__header-text {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 600px;
     font-weight: 400;
     font-size: 22px;
@@ -36,7 +36,7 @@
 }
 
 .about-project__content-title {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 550px;
     font-weight: 400;
     font-size: 20px;
@@ -47,7 +47,7 @@
 }
 
 .about-project__content-text {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 600px;
     font-weight: 400;
     font-size: 14px;
@@ -94,7 +94,7 @@
 }
 
 .about-project__text {
-    font-family: 'Inter', Arial, sans-serif;
+    font-family: inherit;
     max-width: 200px;
     height: 18px;
     text-align: center;
