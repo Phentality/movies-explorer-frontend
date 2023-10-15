@@ -10,7 +10,7 @@ function Profile() {
     }
     return (
         <section className='profile'>
-            <h1 className='profile__title'>Привет, {currentUser.name}</h1>
+            <h1 className='profile__title'>Привет, {currentUser.name}!</h1>
             <div className='profile__container'>
                 <h2 className='profile__text profile__static-text'>Имя</h2>
                 <h2 className='profile__text'>{currentUser.name}</h2>

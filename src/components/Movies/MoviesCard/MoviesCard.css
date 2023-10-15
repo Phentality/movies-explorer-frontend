@@ -88,4 +88,46 @@
     cursor: pointer;
 }
 
+@media (max-width: 320px) {
+    .movies-card {
+        max-width: 300px;
+    }
+    
+    .movies-card__title-container {
+        max-width: 300px;
+    }
+    
+    .movies-card__title {
+        max-width: 200px;
+        padding: 14px 14px 0 14px;
+        font-size: 12px;
+        line-height: 18px;
+    }
+    
+    .movies-card__duration {
+        max-width: 50px;
+        padding: 14px 14px 14px 0px;
+        font-size: 10px;
+        line-height: 18px;
+    }
+    
+    .movies-card__image {
+        height: 168px;
+        display: block;
+    }
+    
+    .movies-card__saved-container {
+        max-width: 300px;
+        padding: 14px 0 14px;
+    }
+    
+    .movies-card__savebtn {
+        margin: 0 100px 0;
+    }
+    
+    .movies-card__savebtn_active {
+        margin: 0 100px 0;
+    }
+}
+
 

@@ -46,3 +46,39 @@
     padding: 0;
     margin: 0;
 }
+
+@media (min-width: 320px) and (max-width:768px) {
+    .filter-check-box {
+        max-width: 768px;
+    }
+    
+    .filter-check-box__container {
+        max-width: 708px;
+    }
+    
+    .filter-check-box__button-container {
+        padding: 27px 0 52px;
+    }
+}
+
+@media (max-width:320px) {
+    .filter-check-box {
+        max-width: 320px;
+    }
+    
+    .filter-check-box__container {
+        max-width: 292px;
+    }
+    
+    .filter-check-box__button-container {
+        max-width: 148px;
+        padding: 30px 0 63px;
+    }
+    
+    
+    .filter-check-box__text {
+        max-width: 99px;
+        font-size: 11px;
+        line-height: 18px;
+    }
+}

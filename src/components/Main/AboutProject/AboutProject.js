@@ -3,14 +3,14 @@ import React from 'react';
 function AboutProject() {
 
   return (
-    <section className='about-project'>
+    <section className='about-project' id="anchor">
       <header className='about-project__header'>
         <h1 className='about-project__header-text'>О проекте</h1>
       </header>
       <div className='about-project__content'>
         <h2 className='about-project__content-title'>Дипломный проект включал 5 этапов</h2>
-        <h2 className='about-project__content-title'>На выполнение диплома ушло 5 недель</h2>
         <p className='about-project__content-text'>Составление плана, работу над бэкендом, вёрстку, добавление функциональности и финальные доработки.</p>
+        <h2 className='about-project__content-title'>На выполнение диплома ушло 5 недель</h2>
         <p className='about-project__content-text'>У каждого этапа был мягкий и жёсткий дедлайн, которые нужно было соблюдать, чтобы успешно защититься.</p>
       </div>
       <div className='about-project__time'>

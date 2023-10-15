@@ -88,6 +88,36 @@
     cursor: pointer;
 }
 
+@media (min-width: 320px) and (max-width:768px) {
+    .profile {
+        max-width: 768px;
+    }
+    
+    .profile__title {
+        max-width: 204px;
+        margin: 0 auto 79px;
+        padding: 236px 0 0;
+    }
+    
+    .profile__container {
+        max-width: 410px;
+        margin: 0px auto 0px;
+        border-bottom: 1px solid #424242;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .profile__without-border {
+        border: none;
+    }
+    
+    .profile__button-container {
+        padding: 194px 0 269px;
+    }
+}
+
 
 
 

@@ -47,17 +47,19 @@
 }
 
 .header__reg-button {
+    display: block;
     font-family: inherit;
     max-width: 77px;
     max-height: 16px;
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
-    margin: 29px 0px 29px;
+    margin: 29px 0 0 0;
     padding: 0;
     color: #FFFFFF;
     background:none;
     border:none;
+    text-decoration: none;
 }
 
 .header__reg-button:hover {
@@ -68,22 +70,197 @@
 .header__enter-button {
     font-family: inherit;
     width: 76px;
-    max-height: 32px;
+    height: 32px;
     font-weight: 500;
     font-size: 12px;
-    background-image: url(../../images/inButton.svg);
-    background-color: transparent;
+    background-color: #3DDC84;
     background-position: 0px 0px;
     border: none;
-    background-repeat: no-repeat;
-    background-size: cover;
+    border-radius: 3px;
+    text-align: center;
+    text-decoration: none;
     line-height: 16px;
     color: #000000;
     margin: 21px 0px 21px;
-    padding:0;
+    padding: auto;
 }
 
 .header__enter-button:hover {
     opacity: 0.8;
     cursor: pointer;
+}
+
+.header__buttons-container {
+    width: 380px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header__films-container {
+    width: 230px;
+    margin: 29px 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header__films-button {
+    display: block;
+    font-family: inherit;
+    max-width: 57px;
+    max-height: 18px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0;
+    color: #FFFFFF;
+    background:none;
+    border:none;
+    text-decoration: none;
+}
+
+.header__films-button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.header__saved-films-button {
+    display: block;
+    font-family: inherit;
+    max-width: 155px;
+    max-height: 18px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 0;
+    color: #FFFFFF;
+    background:none;
+    border:none;
+    text-decoration: none;
+}
+
+.header__saved-films-button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.header__profile-container {
+    width: 100px;
+    margin: 23px 0 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header__profile-text-button {
+    display: block;
+    font-family: inherit;
+    max-width: 57px;
+    max-height: 16px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 8px 0 0 0;
+    padding: 0;
+    color: #FFFFFF;
+    background:none;
+    border:none;
+    text-decoration: none;
+}
+
+.header__profile-text-button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+.header__profile-button {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: #0F4157;
+    background-position: 0px 0px;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    padding: 1px 0 0 0;
+}
+
+.header__text-bold {
+    font-weight: 500;
+}
+
+.header__profile-button_dark {
+    background-color: #313131;
+}
+
+.header__profile-button-image {
+    padding-top: 1px;
+}
+
+.header__profile-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media (min-width: 320px) and (max-width:768px) {
+    .header {
+        max-width: 768px;
+    }
+
+    .header__black {
+        background-color: #202020;
+    }
+    
+    .header__none {
+        display: none;
+    }
+      
+    .header__content {
+        max-width: 708px;
+    }
+}
+
+@media (max-width:320px) {
+    .header {
+        max-width: 320px;
+    }
+
+    .header__black {
+        background-color: #202020;
+    }
+    
+    .header__none {
+        display: none;
+    }
+      
+    .header__content {
+        max-width: 292px;
+    }
+    
+    .header__button-container {
+        width: 132px;
+    }
+    
+    .header__reg-button {
+        max-width: 64px;
+        max-height: 16px;
+        font-size: 10px;
+        line-height: 16px;
+    }
+    
+    .header__enter-button {
+        width: 54px;
+        height: 26px;
+        font-size: 10px;
+        line-height: 16px;
+        margin: 24px 0px 24px;
+    }
 }

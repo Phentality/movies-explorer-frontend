@@ -41,17 +41,6 @@
     margin: 90px auto 26px;
 }
 
-.techs__header-text {
-    font-family: inherit;
-    max-width: 600px;
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 26.63px;
-    margin: 0;
-    padding: 100px 0 23px;
-    color: #FFFFFF;
-}
-
 .techs__card-text {
     font-size: 14px;
     line-height: 16.94px;
@@ -69,6 +58,118 @@
 
 .techs__card {
     width: 90px;
-    background-image: url(../../../images/techCardImage.svg);
+    background-color: #303030;
+    border-radius: 10px;
 }
 
+@media (min-width: 320px) and (max-width:768px) {
+    .techs {
+        max-width: 768px;
+    }
+    
+    .techs__header {
+        max-width: 668px;
+        margin: 0 auto 0;
+        border-bottom: 1px solid rgba(218, 218, 218, 1);
+    }
+    
+    .techs__header-text {
+        max-width: 652px;
+        margin: 0;
+        padding: 90px 0 23px;
+    }
+    
+    .techs__text {
+        font-family: inherit;
+        max-width: 460px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        margin: 0 auto 100px;
+        color: #FFFFFF;
+    }
+    
+    .techs__title {
+        max-width: 600px;
+        font-size: 50px;
+        line-height: 58px;
+        margin: 80px auto 22px;
+    }
+    
+    
+    .techs__card-text {
+        font-size: 14px;
+        line-height: 16.94px;
+        margin: 21px auto 22px;
+    }
+    
+    .techs__technologies {
+        max-width: 648px;
+        margin: 0 auto 0;
+        padding: 0 0 90px;
+        list-style-type: none;
+        display: flex;
+        justify-content:space-around;
+    }
+    
+    .techs__card {
+        width: 84px;
+    }
+}
+
+@media (max-width:320px) {
+    .techs {
+        max-width: 320px;
+        background-color: #202020;
+    }
+
+    .techs__header {
+        max-width: 284px;
+        margin: 0 auto 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 1);
+    }
+
+    .techs__header-text {
+        max-width: 284px;
+        font-size: 18px;
+        line-height: 21.78px;
+        margin: 0;
+        padding: 80px 0 28px;
+    }
+
+    .techs__text {
+        max-width: 292px;
+        font-size: 11px;
+        line-height: 16px;
+        margin: 0 auto 50px;
+    }
+
+    .techs__title {
+        max-width: 292px;
+        font-size: 30px;
+        line-height: 36.31px;
+        margin: 60px auto 24px;
+    }
+
+    .techs__card-text {
+        font-size: 12px;
+        line-height: 14.52px;
+        margin: 21px auto 22px;
+    }
+
+    .techs__technologies {
+        max-width: 178px;
+        margin: 0 auto 0;
+        padding: 0 0 70px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 57px 57px 57px 57px;
+        grid-auto-flow: row;
+        gap: 10px;
+    }
+
+    .techs__card {
+        width: 84px;
+    }
+    }

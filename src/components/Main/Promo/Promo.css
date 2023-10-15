@@ -44,7 +44,7 @@
 .promo-content__info {
     font-family: inherit;
     max-width: 310px;
-    font-weight: 300;
+    font-weight: 400;
     font-size: 13px;
     line-height: 15.73px;
     margin: 36px 0 0;
@@ -63,24 +63,123 @@
     font-family: inherit;
     width: 130px;
     height: 36px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
     background-image: url(../../../images/Langing-button.svg);
     background-color: transparent;
     background-position: 0px 0px;
     border: none;
     background-repeat: no-repeat;
     background-size: cover;
-    color: #000000;
     margin: 84px 0px 75px;
     color: #FFFFFF;
     padding:0;
 }
 
-.promo-content__button:hover {
+.promo-content__button-text {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.promo-content__button-text:hover {
     opacity: 0.8;
     cursor: pointer;
 }
 
+@media (min-width: 320px) and (max-width:768px) {
+.promo {
+    max-width: 768px;
+}
 
+.promo-content {
+    max-width: 680px;
+    margin: 0px auto 0px;
+}
+
+.promo-content__container {
+    max-width: 680px;
+    margin: 0px auto 0px;
+    padding: 140px 0 0 0;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.promo-content__text-content {
+    max-width: 680px;
+    margin: 48px auto 0;
+    padding: 0;
+}
+
+.promo-content__title {
+    font-family: inherit;
+    max-width: 680px;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.promo-content__info {
+    font-family: inherit;
+    max-width: 260px;
+    margin: 22px auto 0;
+    text-align: center;
+}
+
+.promo-content__button {
+    display: block;
+    margin: 84px auto 0;
+}
+}
+
+@media (max-width:320px) {
+    .promo {
+    max-width: 320px;
+}
+
+.promo-content {
+    max-width: 300px;
+    margin: 0px auto 0px;
+}
+
+.promo-content__container {
+    max-width: 300  px;
+    margin: 0px auto 0px;
+    padding: 70px 0 0 0;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.promo-content__text-content {
+    max-width: 320px;
+    margin: 44px auto 0;
+    padding: 0;
+}
+
+.promo-content__logo {
+    max-width: 210px;
+    margin: 0;
+    padding: 0;
+}
+
+.promo-content__title {
+    max-width: 300px;
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+}
+
+.promo-content__info {
+    font-family: inherit;
+    max-width: 260px;
+    margin: 22px auto 0;
+    text-align: center;
+}
+
+.promo-content__button {
+    display: block;
+    margin: 80px auto 0;
+}
+}

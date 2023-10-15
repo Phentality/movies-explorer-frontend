@@ -1,52 +1,18 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import logoPath from '../../images/logo.svg';
+import accountPath from '../../images/profile-icon.svg'
 
 
 function Header(props) {
-  /*const navigate = useNavigate();*/
+  const navigate = useNavigate();
   const location = useLocation();
-
-/*  function signOut() {
-    localStorage.removeItem('jwt');
-    localStorage.removeItem('email');
-    navigate('/signin', { replace: true });
-  }
-  function toSignIn() {
-    navigate('/signin', { replace: true });
-  }
-  function toSignUp() {
-    navigate('/signup', { replace: true });
-  }
-
-  function handleNav() {
-    if (location.pathname === '/signin') {
-      return (<button onClick={toSignUp} className='header__button'>Зарегистрироваться</button>)
-    }
-    if (location.pathname === '/signup') {
-      return (<button onClick={toSignIn} className='header__button'>Войти</button>)
-    }
-    else {
-      return (
-        <div className='header__container'>
-          <p className='header__text'>{props.email}</p>
-          <button onClick={signOut} className='header__button'>Выйти</button>
-        </div>
-      )
-    }
-  }*/
 
   function handleBackground() {
     if (location.pathname === '/') {
       return ("header");
     }
-    if (location.pathname === '/signin') {
-      return ("header__none");
-    }
-    if (location.pathname === '/signup') {
-      return ("header__none");
-    }
-    if (location.pathname === '/not-found') {
+    if (location.pathname === '/signin' || location.pathname === '/signup' || location.pathname === '/not-found') {
       return ("header__none");
     }
     else {
@@ -54,14 +20,73 @@ function Header(props) {
     }
   }
 
+  function handleBoldFilms() {
+    if (location.pathname === '/movies') {
+      return ("header__films-button header__text-bold");
+    }
+    else {
+      return ('header__films-button');
+    }
+  }
+
+  function handleBoldSavedFilms() {
+    if (location.pathname === '/saved-movies') {
+      return ("header__saved-films-button header__text-bold");
+    }
+    else {
+      return ('header__saved-films-button');
+    }
+  }
+
+  function handleProfileButtonBackground() {
+    if (location.pathname === '/') {
+      return ("header__profile-button");
+    }
+    else {
+      return ("header__profile-button header__profile-button_dark")
+    }
+  }
+
+  const handleInNav = () => {
+    navigate('/signin');
+  }
+
+  const handleMainNav = () => {
+    navigate('/')
+  }
+
+  const handleProfileNav = () => {
+    navigate('/profile')
+  }
+
+  const handleAuth = () => {
+    if (props.loggedIn) {
+      return (<div className='header__buttons-container'>
+      <div className='header__films-container'>
+        <Link to="/movies" className={handleBoldFilms()}>Фильмы</Link>
+        <Link to="/saved-movies" className={handleBoldSavedFilms()}>Сохранённые фильмы</Link>
+      </div>
+      <div className='header__profile-container'>
+        <Link to="/profile" className='header__profile-text-button'>Аккаунт</Link>
+        <button className={handleProfileButtonBackground()} onClick={handleProfileNav}><img className='header__profile-button-image' src={accountPath} alt="Профиль"/></button>
+      </div>
+    </div>)
+    }
+    else {
+      return (<div className="header__button-container">
+        <Link to="/signup" className='header__reg-button'>Регистрация</Link>
+        <button className="header__enter-button" onClick={handleInNav} aria-label="Войти" name="enter" value="">Войти</button>
+      </div>)
+    }
+  }
+  // 
+
+
   return (
     <header className={handleBackground()}>
       <div className='header__content'>
-        <button className="header__logo"> <img src={logoPath} alt="Лого" /> </button>
-        <div className="header__button-container">
-          <button className='header__reg-button'>Регистрация</button>
-          <button className="header__enter-button" aria-label="Войти" name="enter" value="">Войти</button>
-        </div>
+        <button className="header__logo" onClick={handleMainNav}> <img src={logoPath} alt="Лого" /> </button>
+        {handleAuth()} 
       </div>
     </header>)
 }

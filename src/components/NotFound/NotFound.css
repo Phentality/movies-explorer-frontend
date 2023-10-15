@@ -51,3 +51,35 @@
     opacity: 0.7;
     cursor: pointer;
 }
+
+@media (min-width: 320px) and (max-width:768px) {
+    .notfound {
+        max-width: 786px;
+    }
+    
+    .notfound__title {
+        padding: 408px 0 0;
+    }
+    
+    .notfound__button {
+        display: block;
+        font-family: inherit;
+        max-width: 42px;
+        max-height: 17px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16.94px;
+        color: #FFFFFF;
+        background:none;
+        border:none;
+        color: #4285F4;
+        text-decoration: none;
+        margin: 0 auto 0;
+        padding: 0 0 222px;
+    }
+    
+    .notfound__button:hover {
+        opacity: 0.7;
+        cursor: pointer;
+    }
+}

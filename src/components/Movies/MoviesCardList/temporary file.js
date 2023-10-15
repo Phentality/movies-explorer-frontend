@@ -51,6 +51,24 @@ const cards = [{
     duration: "85",
     image: "https://i.ytimg.com/vi/QVCxCp67-x8/maxresdefault.jpg",
     movieId: "9"
+},
+{
+    name: "биба и боба",
+    duration: "85",
+    image: "https://i.ytimg.com/vi/QVCxCp67-x8/maxresdefault.jpg",
+    movieId: "10"
+},
+{
+    name: "биба и боба",
+    duration: "85",
+    image: "https://i.ytimg.com/vi/QVCxCp67-x8/maxresdefault.jpg",
+    movieId: "11"
+},
+{
+    name: "биба и боба",
+    duration: "85",
+    image: "https://i.ytimg.com/vi/QVCxCp67-x8/maxresdefault.jpg",
+    movieId: "12"
 }]
 
 export default cards;

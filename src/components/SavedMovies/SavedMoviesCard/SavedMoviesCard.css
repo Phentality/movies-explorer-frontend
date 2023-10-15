@@ -14,4 +14,9 @@
     cursor: pointer;
 }
 
+@media (max-width: 320px) {
+    .saved-movies-card__delbtn {
+        margin: 0 100px 0;
+    }
+}
 
