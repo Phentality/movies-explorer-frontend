@@ -27,8 +27,8 @@
     justify-content: space-between;
 }
 
-.profile__container:last-of-type {
-    border-bottom: none;
+.profile__without-border {
+    border: none;
 }
 
 .profile__text {

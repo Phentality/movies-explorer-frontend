@@ -15,7 +15,7 @@ function Profile() {
                 <h2 className='profile__text profile__static-text'>Имя</h2>
                 <h2 className='profile__text'>{currentUser.name}</h2>
             </div>
-            <div className='profile__container'>
+            <div className='profile__container profile__without-border'>
                 <h2 className='profile__text profile__static-text'>E-mail</h2>
                 <h2 className='profile__text'>{currentUser.email}</h2>
             </div>

@@ -6,11 +6,11 @@
     background-color: #073042;
 }
 
-.header-black {
+.header__black {
     background-color: #202020;
 }
 
-.header-none {
+.header__none {
     display: none;
 }
 

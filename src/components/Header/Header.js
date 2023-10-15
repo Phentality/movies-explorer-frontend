@@ -41,13 +41,16 @@ function Header(props) {
       return ("header");
     }
     if (location.pathname === '/signin') {
-      return ("header-none");
+      return ("header__none");
     }
     if (location.pathname === '/signup') {
-      return ("header-none");
+      return ("header__none");
+    }
+    if (location.pathname === '/not-found') {
+      return ("header__none");
     }
     else {
-      return ('header header-black');
+      return ('header header__black');
     }
   }
 

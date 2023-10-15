@@ -1,0 +1,53 @@
+.notfound {
+    max-width: 1280px;
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #202020;
+}
+
+.notfound__title {
+    max-width: 400px;
+    padding: 246px 0 0;
+    margin: 0 auto 0;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 140px;
+    line-height: 169.43px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.notfound__text {
+    max-width: 400px;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.36px;
+    padding: 0;
+    margin: 5px auto 184px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.notfound__button {
+    display: block;
+    font-family: inherit;
+    max-width: 42px;
+    max-height: 17px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.94px;
+    color: #FFFFFF;
+    background:none;
+    border:none;
+    color: #4285F4;
+    text-decoration: none;
+    margin: 0 auto 0;
+    padding: 0 0 60px;
+}
+
+.notfound__button:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
