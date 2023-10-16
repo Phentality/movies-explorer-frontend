@@ -5,7 +5,7 @@ import contentLogoPath from '../../../images/Landing-logo.svg';
 function Promo() {
 
   return (
-    <div className='promo'>    
+    <div className='promo'>
       <section className='promo-content'>
         <div className='promo-content__container'>
           <div className='promo-content__text-content'>
@@ -14,7 +14,9 @@ function Promo() {
           </div>
           <img className='promo-content__logo' src={contentLogoPath} alt="Логотип" />
         </div>
-        <button className="promo-content__button" aria-label="Узнать" name="learn-more" value=""><a className='promo-content__button-text' href="#anchor">Узнать больше</a></button>
+        <div className='promo-content__button-container'>
+          <button className="promo-content__button" aria-label="Узнать" name="learn-more" value=""><a className='promo-content__button-text' href="#anchor">Узнать больше</a></button>
+        </div>
       </section>
     </div>)
 }
