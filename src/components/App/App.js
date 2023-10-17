@@ -15,6 +15,9 @@ function App() {
   const currentUser = React.useContext(CurrentUserContext);
   /*const [currentUser, setCurrentUser] = React.useState({});*/
   return (
+
+
+
     <div>
       <CurrentUserContext.Provider value={currentUser}>
         <Header />

@@ -210,6 +210,10 @@
     cursor: pointer;
 }
 
+.header__burger-button-container {
+    display: none;
+}
+
 @media (min-width: 320px) and (max-width:768px) {
     .header {
         max-width: 768px;
@@ -225,6 +229,25 @@
       
     .header__content {
         max-width: 708px;
+    }
+
+    .header__buttons-container {
+        display: none;
+    }
+
+    .header__burger-button-container {
+        display: block;
+    }
+
+    .header__burger-button {
+        width: 40px;
+        height: 43px;
+        margin: 15px 0px 16px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
     }
 }
 

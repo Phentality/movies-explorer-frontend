@@ -1,10 +1,22 @@
 import React from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
+import Navigation from '../Navigation/Navigation';
 import logoPath from '../../images/logo.svg';
+import burger from '../../images/Burger-button.svg'
 import accountPath from '../../images/profile-icon.svg'
 
 
 function Header(props) {
+  const [isBurgerOpen, setIsBurgerOpen] = React.useState(false);
+
+  function closeBurger() {
+    setIsBurgerOpen(false);
+  }
+
+  function handleBurgerClick() {
+    setIsBurgerOpen(!isBurgerOpen);
+  }
+
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -60,17 +72,20 @@ function Header(props) {
   }
 
   const handleAuth = () => {
-    if (props.loggedIn) {
-      return (<div className='header__buttons-container'>
-      <div className='header__films-container'>
-        <Link to="/movies" className={handleBoldFilms()}>Фильмы</Link>
-        <Link to="/saved-movies" className={handleBoldSavedFilms()}>Сохранённые фильмы</Link>
-      </div>
-      <div className='header__profile-container'>
-        <Link to="/profile" className='header__profile-text-button'>Аккаунт</Link>
-        <button className={handleProfileButtonBackground()} onClick={handleProfileNav}><img className='header__profile-button-image' src={accountPath} alt="Профиль"/></button>
-      </div>
-    </div>)
+    if (!props.loggedIn) {
+      return (<div className='header__burger-button-container'>
+        <button className='header__burger-button' onClick={handleBurgerClick}> <img src={burger} alt="Бургер" /> </button>
+        <div className='header__buttons-container'>
+          <div className='header__films-container'>
+            <Link to="/movies" className={handleBoldFilms()}>Фильмы</Link>
+            <Link to="/saved-movies" className={handleBoldSavedFilms()}>Сохранённые фильмы</Link>
+          </div>
+          <div className='header__profile-container'>
+            <Link to="/profile" className='header__profile-text-button'>Аккаунт</Link>
+            <button className={handleProfileButtonBackground()} onClick={handleProfileNav}><img className='header__profile-button-image' src={accountPath} alt="Профиль" /></button>
+          </div>
+        </div>
+      </div>)
     }
     else {
       return (<div className="header__button-container">
@@ -79,15 +94,14 @@ function Header(props) {
       </div>)
     }
   }
-  // 
-
 
   return (
     <header className={handleBackground()}>
       <div className='header__content'>
         <button className="header__logo" onClick={handleMainNav}> <img src={logoPath} alt="Лого" /> </button>
-        {handleAuth()} 
+        {handleAuth()}
       </div>
+      <Navigation onClose={closeBurger} isOpened={isBurgerOpen} />
     </header>)
 }
 
