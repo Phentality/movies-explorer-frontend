@@ -41,13 +41,15 @@ function Navigation({ isOpened, onClose }) {
 
     return (
         <div className={`navigation ${isOpened ? 'navigation__visible' : ''}`}>
-            <div className='navigation__container'>
+            <ul className='navigation__container'>
                 <button className="navigation__close" onClick={onClose} aria-label="Закрыть" name="close" value="" />
-                <Link to="/" className={handleUnderlineMain()}>Главная</Link>
-                <Link to="/movies" className={handleUnderlineFilms()}>Фильмы</Link>
-                <Link to="/saved-movies" className={handleUnderlineSavedFilms()}>Сохранённые фильмы</Link>
-                <button className="header__profile-button" onClick={handleProfileNav}><img className='header__profile-button-image' src={accountPath} alt="Профиль" /></button>
-            </div>
+                <li className='navigation__link-container'><Link to="/" className={handleUnderlineMain()}>Главная</Link></li>
+                <li className='navigation__link-container'><Link to="/movies" className={handleUnderlineFilms()}>Фильмы</Link></li>
+                <li className='navigation__link-container'><Link to="/saved-movies" className={handleUnderlineSavedFilms()}>Сохранённые фильмы</Link></li>
+                <li className='navigation__link-container'><Link to="/profile" className='header__profile-text-button'>Аккаунт</Link>
+                    <button className="header__profile-button header__profile-button_dark" onClick={handleProfileNav}><img className='header__profile-button-image' src={accountPath} alt="Профиль" /></button></li>
+
+            </ul>
         </div>
     )
 }

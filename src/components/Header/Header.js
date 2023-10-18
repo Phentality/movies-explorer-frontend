@@ -73,8 +73,9 @@ function Header(props) {
 
   const handleAuth = () => {
     if (!props.loggedIn) {
-      return (<div className='header__burger-button-container'>
+      return (<><div className='header__burger-button-container'>
         <button className='header__burger-button' onClick={handleBurgerClick}> <img src={burger} alt="Бургер" /> </button>
+      </div>
         <div className='header__buttons-container'>
           <div className='header__films-container'>
             <Link to="/movies" className={handleBoldFilms()}>Фильмы</Link>
@@ -85,7 +86,7 @@ function Header(props) {
             <button className={handleProfileButtonBackground()} onClick={handleProfileNav}><img className='header__profile-button-image' src={accountPath} alt="Профиль" /></button>
           </div>
         </div>
-      </div>)
+      </>)
     }
     else {
       return (<div className="header__button-container">
@@ -97,11 +98,11 @@ function Header(props) {
 
   return (
     <header className={handleBackground()}>
+      <Navigation onClose={closeBurger} isOpened={isBurgerOpen} />
       <div className='header__content'>
         <button className="header__logo" onClick={handleMainNav}> <img src={logoPath} alt="Лого" /> </button>
         {handleAuth()}
       </div>
-      <Navigation onClose={closeBurger} isOpened={isBurgerOpen} />
     </header>)
 }
 
