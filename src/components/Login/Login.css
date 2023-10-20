@@ -1,7 +1,6 @@
 .login {
-    max-width: 1280px;
     font-family: 'Inter', Arial, sans-serif;
-    margin: 0;
+    margin: 0 auto 0;
     padding: 0;
     background-color: #202020;
 }
@@ -14,6 +13,11 @@
 
 .login__logo {
     max-width: 38px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
 }
 
 .login__title {

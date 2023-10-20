@@ -11,14 +11,14 @@ function Movies(props) {
 
 
   return (
-    <section>
+    <main>
       <CurrentUserContext.Provider value={currentUser}>
         <SearchForm />
         <FilterCheckBox />
         <MoviesCardList />
         <Footer />
       </CurrentUserContext.Provider>
-    </section>
+    </main>
   )
 }
 

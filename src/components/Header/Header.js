@@ -72,7 +72,7 @@ function Header(props) {
   }
 
   const handleAuth = () => {
-    if (!props.loggedIn) {
+    if (props.loggedIn) {
       return (<><div className='header__burger-button-container'>
         <button className='header__burger-button' onClick={handleBurgerClick}> <img src={burger} alt="Бургер" /> </button>
       </div>

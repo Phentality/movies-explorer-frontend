@@ -6,9 +6,9 @@ function AboutMe() {
 
     return (
         <section className='about-me'>
-            <header className='about-me__header'>
+            <div className='about-me__header'>
                 <h1 className='about-me__header-text'>Студент</h1>
-            </header>
+            </div>
             <section className='about-me__content'>
                 <div className='about-me__container'>
                     <img className='about-me__photo' src={photo} alt="Логотип" />
@@ -18,7 +18,7 @@ function AboutMe() {
                         <p className='about-me__info about-me__info-text'>Я родился и живу в Уфе, закончил юридический факультет Башкирского института социальный технологоий.
                             Я люблю слушать музыку, а ещё увлекаюсь компьютерной техникой. Недавно начал кодить. С 2020 года работаю в типографии начальником производства. После того, как прошёл курс по веб-разработке, начал активно искать работу для смены постоянной работы.</p>
                     </div>
-                    <a href='https://github.com/Phentality' className="about-me__link" value="">Github</a>      
+                    <a href='https://github.com/Phentality' className="about-me__link" value="" target="_blank" rel="noopener noreferrer">Github</a>      
                 </div>
             </section>
         </section>)

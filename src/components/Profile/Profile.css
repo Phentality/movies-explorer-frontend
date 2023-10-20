@@ -1,7 +1,6 @@
 .profile {
-    max-width: 1280px;
     font-family: 'Inter', Arial, sans-serif;
-    margin: 0;
+    margin: 0 auto 0;
     padding: 0;
     background-color: #202020;
 }
@@ -53,12 +52,12 @@
 .profile__input {
     font-family: inherit;
     display: block;
+    text-align: right;
     padding: 0;
     border: 0;
     width: 122px;
     margin: 17px 0 16px;
     box-sizing: border-box;
-    border-bottom: 1px solid #424242;
     background-color: transparent;
     font-style: normal;
     font-size: 11px;
@@ -120,6 +119,11 @@
 
 .profile__button:hover {
     opacity: 0.7;
+    cursor: pointer;
+}
+
+.profile__submit-button:hover {
+    opacity: 0.8;
     cursor: pointer;
 }
 

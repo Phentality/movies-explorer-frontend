@@ -1,12 +1,14 @@
 .saved-movies-card__delbtn {
-    width: 100px;
+    display: block;
+    max-width: 100px;
     height: 29px;
+    width: 100%;
     background-image: url(../../../images/deleteMovie.svg);
     border: none;
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: 0px 0px;
-    margin: 0 130px 0;
+    margin: 0 auto 0;
 }
 
 .saved-movies-card__delbtn:hover {
@@ -19,4 +21,3 @@
         margin: 0 100px 0;
     }
 }
-

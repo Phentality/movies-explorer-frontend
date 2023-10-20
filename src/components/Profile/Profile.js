@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 /*import { CurrentUserContext } from '../../contexts/CurrentUserContext';*/
 
 function Profile() {
     /*const currentUser = React.useContext(CurrentUserContext);*/
+    const navigate = useNavigate();
     const [onEdit, setOnEdit] = React.useState(false);
 
     let currentUser = {
@@ -18,6 +20,10 @@ function Profile() {
         setOnEdit(false);
     }
 
+    const handleMainNav = () => {
+        navigate('/')
+      }
+
     const handleContent = () => {
         if (!onEdit) {
             return (<><div className='profile__container'>
@@ -30,17 +36,17 @@ function Profile() {
                 </div>
                 <div className='profile__button-container'>
                     <button className='profile__button profile__edit-button' onClick={handleEditButton}>Редактировать</button>
-                    <button className='profile__button profile__logout-button'>Выйти из аккаунта</button>
+                    <button className='profile__button profile__logout-button' onClick={handleMainNav}>Выйти из аккаунта</button>
                 </div></>)
         }
         else { return (<><form>
             <div className='profile__container'>
                 <h2 className='profile__text profile__static-text'>Имя</h2>
-                <input className='profile__input' />
+                <input className='profile__input' value={currentUser.name} />
             </div>
             <div className='profile__container profile__without-border'>
                 <h2 className='profile__text profile__static-text'>E-mail</h2>
-                <input className='profile__input' />
+                <input className='profile__input' value={currentUser.email}/>
             </div>
             <div className='profile__button-container'>
                 <button className="profile__submit-button" onClick={handleSubmitButton} aria-label="Сохранить" name="safe" value="">Сохранить</button>

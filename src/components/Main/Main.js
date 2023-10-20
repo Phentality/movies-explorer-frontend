@@ -11,7 +11,7 @@ function Main(props) {
   const currentUser = React.useContext(CurrentUserContext);
 
   return (
-    <section>
+    <main>
       <CurrentUserContext.Provider value={currentUser}>
         <Promo />
         <AboutProject />
@@ -20,7 +20,7 @@ function Main(props) {
         <Portfolio />
         <Footer />
       </CurrentUserContext.Provider>
-    </section>
+    </main>
   )
 }
 

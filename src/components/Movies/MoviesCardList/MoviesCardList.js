@@ -11,8 +11,8 @@ function MoviesCardList(props) {
                 {cards.map((card) => (
                     <MoviesCard key={card.movieId} card={card} />
                 ))}
-                <button className='movies-card-list__more-button'>Ещё</button>
             </div>
+            <button className='movies-card-list__more-button'>Ещё</button>
         </section>)
 }
 

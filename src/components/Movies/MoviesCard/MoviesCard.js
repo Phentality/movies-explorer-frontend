@@ -27,7 +27,7 @@ function MoviesCard({ card }) {
             </div>
             <img className="movies-card__image" src={card.image} alt={card.name} />
             <div className="movies-card__saved-container">
-                <button className="movies-card__savebtn" type="button" aria-label="Сохранить" name="save"></button>
+                <button className="movies-card__savebtn" type="button" aria-label="Сохранить" name="save">Сохранить</button>
             </div>
         </div>
     )

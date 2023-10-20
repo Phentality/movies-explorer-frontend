@@ -10,8 +10,8 @@ function Footer() {
             <div className='footer__sign-container'>
                 <h2 className='footer__text footer__year'>© 2023</h2>
                 <div className='footer__link-container'>
-                    <a href='https://practicum.yandex.ru/' className="footer__text footer__year footer__link" value="">Яндекс.Практикум</a>
-                    <a href='https://github.com/Phentality' className="footer__text footer__year footer__link" value="">Github</a>
+                    <a href='https://practicum.yandex.ru/' className="footer__text footer__year footer__link" value="" target="_blank" rel="noopener noreferrer">Яндекс.Практикум</a>
+                    <a href='https://github.com/Phentality' className="footer__text footer__year footer__link" value="" target="_blank" rel="noopener noreferrer">Github</a>
                 </div>
             </div>
         </footer>)
