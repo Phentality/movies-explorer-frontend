@@ -2,7 +2,7 @@
     font-family: 'Inter', Arial, sans-serif;
     position: relative;
     margin: 0px auto 0px;
-    padding: 0;
+    padding: 0 70px 0;
     background-color: #073042;
 }
 
@@ -252,7 +252,7 @@
     }
 }
 
-@media (max-width:320px) {
+@media (min-width: 0px) and (max-width:320px) {
     .header {
         max-width: 320px;
     }

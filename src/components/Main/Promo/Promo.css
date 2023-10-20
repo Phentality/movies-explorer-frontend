@@ -1,7 +1,7 @@
 .promo {
     font-family: 'Inter', Arial, sans-serif;
     margin: 0 auto 0;
-    padding: 0;
+    padding: 0 70px 0;
     background-color: #073042;
 }
 
@@ -126,6 +126,7 @@
     font-family: inherit;
     max-width: 260px;
     margin: 22px auto 0;
+    padding: 0;
     text-align: center;
 }
 
@@ -140,7 +141,7 @@
 }
 }
 
-@media (max-width:320px) {
+@media (min-width: 0px) and (max-width:320px) {
     .promo {
     max-width: 320px;
 }

@@ -1,7 +1,7 @@
 .about-project {
     font-family: 'Inter', Arial, sans-serif;
     margin: 0 auto 0;
-    padding: 0;
+    padding: 0 70px 0;
     background-color: #202020;
 }
 
@@ -156,7 +156,7 @@
     }
 }
 
-@media (max-width:320px) {    
+@media (min-width: 0px) and (max-width:320px) {    
     .about-project {
         max-width: 320px;
     }

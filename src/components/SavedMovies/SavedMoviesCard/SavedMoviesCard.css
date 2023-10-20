@@ -16,7 +16,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 320px) {
+@media (min-width: 0px) and (max-width:320px) {
     .saved-movies-card__delbtn {
         margin: 0 100px 0;
     }

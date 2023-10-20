@@ -1,9 +1,8 @@
 .about-me {
     font-family: 'Inter', Arial, sans-serif; 
     margin: 0 auto 0;
-    padding: 0;
+    padding: 0 70px 0;
     background-color: #202020;
-    overflow: auto;
 }
 
 .about-me__header {
@@ -72,7 +71,6 @@
     margin: 18px 0 8px;
     padding: 0;
     color: #FFFFFF;
-    overflow: auto;
 }
 
 .about-me__info-text {
@@ -155,6 +153,7 @@
         font-size: 12px;
         line-height: 18px;
         margin: 16px 0 2px;
+        overflow: auto;
     }
     
     .about-me__info-text {

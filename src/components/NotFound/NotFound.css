@@ -65,7 +65,7 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 0px) and (max-width:320px) {
 .notfound {
     max-width: 320px;
 }

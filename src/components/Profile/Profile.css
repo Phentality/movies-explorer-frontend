@@ -157,7 +157,7 @@
     }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 0px) and (max-width:320px) {
     .profile {
         max-width: 320px;
     }
