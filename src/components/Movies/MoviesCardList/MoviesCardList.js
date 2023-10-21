@@ -7,11 +7,11 @@ function MoviesCardList(props) {
 
     return (
         <section className='movies-card-list'>
-            <div className='movies-card-list__grid'>
+            <ul className='movies-card-list__grid'>
                 {cards.map((card) => (
                     <MoviesCard key={card.movieId} card={card} />
                 ))}
-            </div>
+            </ul>
             <button className='movies-card-list__more-button'>Ещё</button>
         </section>)
 }

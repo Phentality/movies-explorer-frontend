@@ -8,7 +8,7 @@ function FilterCheckBox() {
     setIsActive(!isActive);
   }
   const filterCheckBoxClassName = (
-    `${isActive ? 'filter-check-box__button' : 'filter-check-box__button_unactive'}`
+    `${isActive ? 'filter-check-box__button' : 'filter-check-box__button-unactive'}`
   );
 
   return (

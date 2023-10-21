@@ -46,10 +46,10 @@ function Register() {
      }*/
 
     return (
-        <section className='register'>
+        <main className='register'>
             <div className='register__container'>
                 <button className="register__logo" onClick={handleMainNav}> <img src={logoPath} alt="Лого" /> </button>
-                <p className='register__title'>Добро пожаловать!</p>
+                <h1 className='register__title'>Добро пожаловать!</h1>
                 <form className='register__form' id="register-form">
                     <label className='register__label'>Имя</label>
                     <input
@@ -57,11 +57,20 @@ function Register() {
                         id='name'
                         {...register("name", {
                             required: "Поле обязательно к заполнению",
+                            minLength: {
+                                value: 2,
+                                message: "Минимум 2 символа"
+                            },
+                            maxLength: {
+                                value: 30,
+                                message: "Максимум 30 символов"
+                            }
                         })}
                         placeholder="Имя"
                         type='text'
                         value={formValue.name}
                         onChange={handleChange} />
+                    {!errors?.name && <span id="name-error" className="register__error"></span>}
                     {errors?.name && <span id="name-error" className="register__error">{errors?.name?.message || "Error!"}</span>}
                     <label className='register__label'>E-mail</label>
                     <input
@@ -69,11 +78,16 @@ function Register() {
                         id='email'
                         {...register("email", {
                             required: "Поле обязательно к заполнению",
+                            pattern: {
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                message: "Нужно ввести E-mail"
+                              }
                         })}
                         placeholder="Email"
                         type='email'
                         value={formValue.email}
                         onChange={handleChange} />
+                    {!errors?.email && <span id="name-error" className="register__error"></span>}
                     {errors?.email && <span id="email-error" className="register__error">{errors?.email?.message || "Error!"}</span>}
                     <label className='register__label'>Пароль</label>
                     <input
@@ -81,11 +95,16 @@ function Register() {
                         id='password'
                         {...register("password", {
                             required: "Поле обязательно к заполнению",
+                            minLength: {
+                                value: 6,
+                                message: "Минимум 6 символов"
+                            },
                         })}
                         placeholder="Пароль"
                         type='password'
                         value={formValue.password}
                         onChange={handleChange} />
+                    {!errors?.password && <span id="name-error" className="register__error"></span>}
                     {errors?.password && <span id="password-error" className="register__error">{errors?.password?.message || "Error!"}</span>}
                     <button className="register__button" type="submit" aria-label="Зарегистрироваться" name="signup" value="">Зарегистрироваться</button>
                 </form>
@@ -94,7 +113,7 @@ function Register() {
                     <Link to="/signin" className='register__login-link'>Войти</Link>
                 </div>
             </div>
-        </section>)
+        </main>)
 }
 
 export default Register;

@@ -17,6 +17,7 @@
     font-weight: 400;
     font-size: 22px;
     line-height: 26.63px;
+    letter-spacing: -1px;
     margin: 0;
     padding: 110px 0 23px;
     color: #FFFFFF;
@@ -29,6 +30,7 @@
     font-weight: 400;
     font-size: 20px;
     line-height: 24.2px;
+    letter-spacing: -0.9px;
     margin: 0;
     padding: 0;
     color: #FFFFFF;
@@ -73,12 +75,14 @@
     max-width: 228px;
     height: 36px;
     background-image: url(../../../images/backtime.svg);
+    object-fit: cover;
 }
 
 .about-project__fronttime-image {
     max-width: 912px;
     height: 36px;
     background-image: url(../../../images/fronttime.svg);
+    object-fit: cover;
 }
 
 .about-project__text {
@@ -159,6 +163,7 @@
 @media (min-width: 0px) and (max-width:320px) {    
     .about-project {
         max-width: 320px;
+        padding: 0 10px 0;
     }
     
     .about-project__header {
@@ -166,7 +171,9 @@
     }
     
     .about-project__header-text {
-        padding: 70px 0 28px;
+        padding: 70px 0 27px;
+        font-size: 18px;
+        line-height: 21.78px;
     }
     
     .about-project__content {
@@ -175,13 +182,14 @@
         grid-template-rows: auto auto;
         grid-auto-flow: row;
         gap: 16px;
-        margin: 20px auto 0;
+        margin: 23px auto 0;
     }
 
     .about-project__content-title {
         max-width: 284px;
         font-size: 18px;
         line-height: 21.78px;
+        letter-spacing: -0.7px;
         margin: 0 auto 0;
         padding-top: 40px;
     }
@@ -214,19 +222,19 @@
     }
 
     .about-project__text {
-    font-family: inherit;
-    max-width: 80px;
-    height: 13px;
-    text-align: center;
-    font-weight: 400;
-    font-size: 11px;
-    margin: 0 auto 0;
-    padding: 11px 0 0;
-    line-height: 13.1px;
+        font-family: inherit;
+        max-width: 80px;
+        height: 13px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 11px;
+        margin: 0 auto 0;
+        padding: 11px 0 0;
+        line-height: 13.1px;
     }
 
     .about-project__gray-text {
-    padding: 0;
+        padding: 0;
     }
 }
 

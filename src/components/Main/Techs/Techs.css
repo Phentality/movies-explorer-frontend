@@ -18,6 +18,7 @@
     font-weight: 400;
     font-size: 22px;
     line-height: 26.63px;
+    letter-spacing: -1px;
     margin: 0;
     padding: 100px 0 23px;
     color: #FFFFFF;
@@ -29,6 +30,7 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
+    letter-spacing: -0.6px;
     text-align: center;
     margin: 0 auto 100px;
     color: #FFFFFF;
@@ -38,6 +40,7 @@
     max-width: 600px;
     font-size: 50px;
     line-height: 58px;
+    letter-spacing: -2px;
     margin: 90px auto 26px;
 }
 
@@ -48,7 +51,7 @@
 }
 
 .techs__technologies {
-    max-width: 690px;
+    max-width: 700px;
     margin: 0 auto 0;
     padding: 0 0 100px;
     list-style-type: none;
@@ -84,10 +87,11 @@
         font-family: inherit;
         max-width: 460px;
         font-weight: 400;
-        font-size: 14px;
-        line-height: 20px;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: -1px;
         text-align: center;
-        margin: 0 auto 100px;
+        margin: 0 auto 83px;
         color: #FFFFFF;
     }
     
@@ -95,6 +99,7 @@
         max-width: 600px;
         font-size: 50px;
         line-height: 58px;
+        letter-spacing: -2px;
         margin: 80px auto 22px;
     }
     
@@ -106,7 +111,7 @@
     }
     
     .techs__technologies {
-        max-width: 648px;
+        max-width: 660px;
         margin: 0 auto 0;
         padding: 0 0 90px;
         list-style-type: none;
@@ -116,12 +121,14 @@
     
     .techs__card {
         width: 84px;
+        height: 57px;
     }
 }
 
 @media (min-width: 0px) and (max-width:320px) {
     .techs {
         max-width: 320px;
+        padding: 0 10px 0;
         background-color: #202020;
     }
 
@@ -136,13 +143,14 @@
         font-size: 18px;
         line-height: 21.78px;
         margin: 0;
-        padding: 80px 0 28px;
+        padding: 70px 0 28px;
     }
 
     .techs__text {
         max-width: 292px;
-        font-size: 11px;
+        font-size: 12px;
         line-height: 16px;
+        letter-spacing: -1px;
         margin: 0 auto 50px;
     }
 
@@ -150,7 +158,8 @@
         max-width: 292px;
         font-size: 30px;
         line-height: 36.31px;
-        margin: 60px auto 24px;
+        letter-spacing: -0.65px;
+        margin: 60px auto 23px;
     }
 
     .techs__card-text {

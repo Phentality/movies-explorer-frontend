@@ -25,10 +25,10 @@ function Header(props) {
       return ("header");
     }
     if (location.pathname === '/signin' || location.pathname === '/signup' || location.pathname === '/not-found') {
-      return ("header__none");
+      return ("header header-none");
     }
     else {
-      return ('header header__black');
+      return ('header header-black');
     }
   }
 
@@ -72,7 +72,7 @@ function Header(props) {
   }
 
   const handleAuth = () => {
-    if (props.loggedIn) {
+    if (!props.loggedIn) {
       return (<><div className='header__burger-button-container'>
         <button className='header__burger-button' onClick={handleBurgerClick}> <img src={burger} alt="Бургер" /> </button>
       </div>

@@ -54,10 +54,10 @@ function Profile() {
         </form></>) }
     }
     return (
-        <section className='profile'>
+        <main className='profile'>
             <h1 className='profile__title'>Привет, {currentUser.name}!</h1>
             {handleContent()}
-        </section>)
+        </main>)
 }
 
 export default Profile;

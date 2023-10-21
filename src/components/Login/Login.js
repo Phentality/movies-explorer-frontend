@@ -52,22 +52,27 @@ function Login() {
      }*/
 
     return (
-        <section className='login'>
+        <main className='login'>
             <div className='login__container'>
                 <button className="login__logo" onClick={handleMainNav}> <img src={logoPath} alt="Лого" /> </button>
-                <p className='login__title'>Рады видеть!</p>
+                <h1 className='login__title'>Рады видеть!</h1>
                 <form className='login__form' id="login-form">
                     <label className='login__label'>E-mail</label>
                     <input
                         className='login__input'
                         id='email'
+                        type='email'
                         {...register("email", {
                             required: "Поле обязательно к заполнению",
+                            pattern: {
+                                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                                message: "Нужно ввести E-mail"
+                              }
                         })}
                         placeholder="Email"
-                        type='email'
                         value={formValue.email}
                         onChange={handleChange} />
+                    {!errors?.email && <span id="name-error" className="register__error"></span>}
                     {errors?.email && <span id="email-error" className="register__error">{errors?.email?.message || "Error!"}</span>}
                     <label className='login__label'>Пароль</label>
                     <input
@@ -75,12 +80,17 @@ function Login() {
                         id='password'
                         {...register("password", {
                             required: "Поле обязательно к заполнению",
+                            minLength: {
+                                value: 6,
+                                message: "Минимум 6 символов"
+                            },
                         })}
                         placeholder="Пароль"
                         type='password'
                         value={formValue.password}
                         onChange={handleChange}
                         required />
+                    {!errors?.password && <span id="name-error" className="register__error"></span>}
                     {errors?.password && <span id="password-error" className="register__error">{errors?.password?.message || "Error!"}</span>}
                     <button className="login__button" type="submit" aria-label="Войти" name="signin" value="">Войти</button>
                 </form>
@@ -89,7 +99,7 @@ function Login() {
                     <Link to="/signup" className='login__reg-link'>Регистрация</Link>
                 </div>
             </div>
-        </section>)
+        </main>)
 }
 
 export default Login;

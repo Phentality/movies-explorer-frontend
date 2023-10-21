@@ -6,11 +6,11 @@
     background-color: #073042;
 }
 
-.header__black {
+.header-black {
     background-color: #202020;
 }
 
-.header__none {
+.header-none {
     display: none;
 }
 
@@ -24,7 +24,7 @@
 
 .header__logo {
     max-width: 38px;
-    margin: 18px 0px 18px;
+    margin: 20px 0px 16px;
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -54,7 +54,7 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 16px;
-    margin: 29px 0 0 0;
+    margin: 31px 0 0 0;
     padding: 0;
     color: #FFFFFF;
     background:none;
@@ -81,7 +81,7 @@
     text-decoration: none;
     line-height: 16px;
     color: #000000;
-    margin: 21px 0px 21px;
+    margin: 23px 0px 19px;
     padding: auto;
 }
 
@@ -241,8 +241,8 @@
     }
 
     .header__burger-button {
-        width: 40px;
-        height: 43px;
+        width: 44px;
+        height: 44px;
         margin: 15px 0px 16px;
         border: none;
         background-color: transparent;
@@ -252,9 +252,10 @@
     }
 }
 
-@media (min-width: 0px) and (max-width:320px) {
+@media (min-width: 1px) and (max-width:320px) {
     .header {
         max-width: 320px;
+        padding: 0 14px 0;
     }
 
     .header__black {
@@ -268,23 +269,23 @@
     .header__content {
         max-width: 292px;
     }
-    
-    .header__button-container {
-        width: 132px;
+
+    .header__buttons-container {
+        display: none;
+    }
+
+    .header__burger-button-container {
+        display: block;
     }
     
-    .header__reg-button {
-        max-width: 64px;
-        max-height: 16px;
-        font-size: 10px;
-        line-height: 16px;
-    }
-    
-    .header__enter-button {
-        width: 54px;
-        height: 26px;
-        font-size: 10px;
-        line-height: 16px;
-        margin: 24px 0px 24px;
+    .header__burger-button {
+        width: 40px;
+        height: 43px;
+        margin: 15px 0px 16px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        outline: none;
+        padding: 0;
     }
 }

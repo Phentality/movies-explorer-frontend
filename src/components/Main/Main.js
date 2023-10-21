@@ -18,7 +18,6 @@ function Main(props) {
         <Techs />
         <Aboutme />
         <Portfolio />
-        <Footer />
       </CurrentUserContext.Provider>
     </main>
   )

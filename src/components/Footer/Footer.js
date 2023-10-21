@@ -1,9 +1,21 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 function Footer() {
 
+    const location = useLocation();
+
+    function handleVisibility() {
+        if (location.pathname === '/signin' || location.pathname === '/signup' || location.pathname === '/not-found' || location.pathname === '/profile') {
+            return ("footer footer-none");
+        }
+        else {
+            return ('footer');
+        }
+    }
+
     return (
-        <footer className="footer">
+        <footer className={handleVisibility()}>
             <div className='footer__text-container'>
                 <h1 className='footer__text'>Учебный проект Яндекс.Практикум х BeatFilm.</h1>
             </div>

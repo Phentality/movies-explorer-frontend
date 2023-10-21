@@ -21,7 +21,7 @@
 }
 
 .login__title {
-    margin: 40px 0 40px;
+    margin: 38px 0 40px;
     padding: 0;
     font-family: inherit;
     font-size: 24px;
@@ -60,7 +60,13 @@
     font-size: 14px;
     line-height: 16.94px;
     margin: 0px auto 6px;
+    padding-bottom: 10px;
     color: white;
+}
+
+.login__input:focus {
+    background-color: transparent;
+    outline: none;
 }
 
 .login__error {
@@ -80,7 +86,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 16.94px;
-    margin: 134px auto 0;
+    margin: 197px auto 0;
     padding: 0;
     text-align: center;
     background-color: #4285F4;
@@ -151,6 +157,11 @@
     .login {
         max-width: 320px;
     }
+
+    .login__logo {
+        display: block;
+        margin: 0 auto 0 ;
+    }
     
     .login__container {
         max-width: 260px;
@@ -158,14 +169,15 @@
     }
     
     .login__title {
-        margin: 50px 0 80px;
+        text-align: center;
+        margin: 47px 0 80px;
     }
     
     .login__button {
         height: 45px;
         font-size: 12px;
         line-height: 14.52px;
-        margin: 267px auto 0;
+        margin: 286px auto 0;
     }
     
     .login__signup {

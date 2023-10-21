@@ -17,6 +17,7 @@
     font-weight: 400;
     font-size: 22px;
     line-height: 26.63px;
+    letter-spacing: -1px;
     margin: 0;
     padding: 110px 0 23px;
     color: #FFFFFF;
@@ -33,7 +34,7 @@
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 251px 17px;
     grid-auto-flow: row;
-    gap: 91px 270px;
+    gap: 58px 270px;
     padding: 0;
     margin: 66px auto 0;
     max-width: 1140px;
@@ -64,19 +65,22 @@
 .about-me__info {
     font-family: inherit;
     max-width: 600px;
-    max-height: 200px;
+    max-height: 20px;
     font-weight: 500;
     font-size: 18px;
     line-height: 20px;
     margin: 18px 0 8px;
     padding: 0;
     color: #FFFFFF;
+    overflow: auto;
 }
 
 .about-me__info-text {
+    max-height: 176px;
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
+    overflow: auto;
 }
 
 .about-me__photo {
@@ -85,6 +89,8 @@
     grid-row-start: 1;
     grid-row-end: 2;
     max-width: 270px;
+    width: 30vh;   
+    max-height: 327px;
     border-radius: 10px;
     margin: 0;
     padding: 0;
@@ -131,7 +137,7 @@
         grid-template-columns: 3fr 1fr;
         grid-template-rows: 251px 17px;
         grid-auto-flow: row;
-        gap: 85px 41px;
+        gap: 41px 41px;
         padding: 0;
         margin: 66px auto 0;
         max-width: 1140px;
@@ -180,6 +186,7 @@
 @media (min-width: 0px) and (max-width:320px) {
     .about-me {
         max-width: 320px;
+        padding: 0 10px 0;
     }
     
     .about-me__header {
@@ -203,12 +210,12 @@
         flex-direction: column;
         padding: 0;
         gap: 0;
-        margin: 66px auto 0;
+        margin: 60px auto 0;
     }
     
     .about-me__text-content {
         max-width: 292px;
-        margin: 0;
+        margin: 25px 0 0;
         padding: 0;
     }
     
@@ -235,10 +242,11 @@
     
     .about-me__photo {
         max-width: 292px;
+        width: 100%;
         margin-bottom: 40px;
     }
 
     .about-me__link {
-        margin-top: 20px;
+        margin-top: 3px;
     }
 }

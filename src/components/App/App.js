@@ -7,6 +7,7 @@ import Profile from '../Profile/Profile';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import NotFound from '../NotFound/NotFound';
+import Footer from '../Footer/Footer';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
@@ -31,6 +32,7 @@ function App() {
           <Route path="/not-found" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/not-found" />} />
         </Routes>
+        <Footer />
       </CurrentUserContext.Provider>
     </div>
   );

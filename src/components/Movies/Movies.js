@@ -1,5 +1,4 @@
 import React from 'react';
-import Footer from '../Footer/Footer';
 import SearchForm from './SearchForm/SearchForm';
 import FilterCheckBox from './FilterCheckBox/FilterCheckBox';
 import MoviesCardList from './MoviesCardList/MoviesCardList';
@@ -16,7 +15,6 @@ function Movies(props) {
         <SearchForm />
         <FilterCheckBox />
         <MoviesCardList />
-        <Footer />
       </CurrentUserContext.Provider>
     </main>
   )
