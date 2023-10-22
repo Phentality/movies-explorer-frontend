@@ -84,6 +84,10 @@ function Login() {
                                 value: 6,
                                 message: "Минимум 6 символов"
                             },
+                            maxLength: {
+                                value: 30,
+                                message: "Максимум 30 символов"
+                            }
                         })}
                         placeholder="Пароль"
                         type='password'
