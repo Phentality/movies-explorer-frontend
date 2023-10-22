@@ -9,7 +9,7 @@
     font-family: 'Inter', Arial, sans-serif;
 }
 
-.navigation__visible {
+.navigation-visible {
     visibility: visible;
     opacity: 1;
 }
@@ -91,7 +91,7 @@
 
 @media (min-width: 0px) and (max-width:320px) {
     .navigation__container {
-        width: 100%;
+        width: 100vw;
         height: 100%;
     }
     

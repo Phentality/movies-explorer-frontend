@@ -40,7 +40,7 @@ function Navigation({ isOpened, onClose }) {
     }
 
     return (
-        <div className={`navigation ${isOpened ? 'navigation__visible' : ''}`}>
+        <div className={`navigation ${isOpened ? 'navigation-visible' : ''}`}>
             <ul className='navigation__container'>
                 <button className="navigation__close" onClick={onClose} aria-label="Закрыть" name="close" value="" />
                 <li className='navigation__link-container'><Link to="/" className={handleUnderlineMain()}>Главная</Link></li>

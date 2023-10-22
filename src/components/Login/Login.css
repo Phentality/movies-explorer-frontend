@@ -69,6 +69,10 @@
     outline: none;
 }
 
+.login__input_type_error {
+    color: #EE3465;
+}
+
 .login__error {
     margin: 0 0 5px;
     padding: 0 0 6px;
@@ -152,6 +156,20 @@
         padding: 0 0 232px;
     }
 }
+@media (min-width: 320px) and (max-width: 457px) {
+    .login__logo {
+        display: block;
+        margin: 0 auto 0 ;
+    }
+
+    .login__title {
+        text-align: center;
+        margin: 47px 0 80px;
+    }
+    .login__container {
+        padding: 232px 20px 0;;
+    }
+}
 
 @media (min-width: 0px) and (max-width:320px) {
     .login {
@@ -165,7 +183,7 @@
     
     .login__container {
         max-width: 260px;
-        padding: 56px 0 0;
+        padding: 56px 10px 0;
     }
     
     .login__title {

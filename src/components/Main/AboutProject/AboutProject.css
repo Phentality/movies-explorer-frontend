@@ -160,6 +160,32 @@
     }
 }
 
+@media (min-width: 321px) and (max-width:657px) {
+        .about-project__content {
+        max-width: 668px;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-auto-flow: row;
+        gap: 16px;
+        margin: 23px auto 0;
+    }
+        .about-project__content-title {
+        max-width: 284px;
+        font-size: 18px;
+        line-height: 21.78px;
+        letter-spacing: -0.7px;
+        margin: 0 auto 0;
+        padding-top: 40px;
+    }
+    
+    .about-project__content-text {
+        max-width: 284px;
+        font-size: 11px;
+        line-height: 16px;
+        margin: 0 auto 0;
+    }
+}
+
 @media (min-width: 0px) and (max-width:320px) {    
     .about-project {
         max-width: 320px;

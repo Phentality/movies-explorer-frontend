@@ -19,7 +19,7 @@ function MoviesCard({ card }) {
             </div>
             <img className="movies-card__image" src={card.image} alt={card.name} />
             <div className="movies-card__saved-container">
-                <button className="saved-movies-card__delbtn" type="button" aria-label="удалить" name="delete"></button>
+                <button className="movies-card__saved-delbtn" type="button" aria-label="удалить" name="delete"></button>
             </div>
         </li>
     )

@@ -122,6 +122,18 @@
     }
 }
 
+@media (min-width: 320px) and (max-width:782px) {
+    .movies-card__title {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+    .movies-card__duration {
+    font-size: 10px;
+    line-height: 14px;
+}
+}
+
 @media (min-width: 0px) and (max-width:320px) {
     .movies-card {
         max-width: 300px;
@@ -156,11 +168,11 @@
     }
     
     .movies-card__savebtn {
-        margin: 0 100px 0;
+        margin: 0 auto 0;
     }
     
     .movies-card__savebtn_active {
-        margin: 0 100px 0;
+        margin: 0 auto 0;
     }
 }
 

@@ -72,8 +72,8 @@ function Login() {
                         placeholder="Email"
                         value={formValue.email}
                         onChange={handleChange} />
-                    {!errors?.email && <span id="name-error" className="register__error"></span>}
-                    {errors?.email && <span id="email-error" className="register__error">{errors?.email?.message || "Error!"}</span>}
+                    {!errors?.email && <span id="name-error" className="login__error"></span>}
+                    {errors?.email && <span id="email-error" className="login__error">{errors?.email?.message || "Error!"}</span>}
                     <label className='login__label'>Пароль</label>
                     <input
                         className='login__input'
@@ -90,8 +90,8 @@ function Login() {
                         value={formValue.password}
                         onChange={handleChange}
                         required />
-                    {!errors?.password && <span id="name-error" className="register__error"></span>}
-                    {errors?.password && <span id="password-error" className="register__error">{errors?.password?.message || "Error!"}</span>}
+                    {!errors?.password && <span id="name-error" className="login__error"></span>}
+                    {errors?.password && <span id="password-error" className="login__error">{errors?.password?.message || "Error!"}</span>}
                     <button className="login__button" type="submit" aria-label="Войти" name="signin" value="">Войти</button>
                 </form>
                 <div className='login__signup'>

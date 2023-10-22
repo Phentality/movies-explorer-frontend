@@ -87,6 +87,14 @@
     opacity: 0.8;
     cursor: pointer;
 }
+@media (min-width: 768px) and (max-width:1041px) {
+.promo-content__logo {
+    max-width: 25vw;
+    height:auto;
+    margin: 0;
+    padding: 0;
+}
+}
 
 @media (min-width: 320px) and (max-width:768px) {
 .promo {
@@ -145,6 +153,23 @@
     display: block;
     margin: 87px auto 0;
 }
+}
+
+@media (min-width: 320px) and (max-width:430px) {
+    .promo-content__title {
+        max-width: 330px;
+        font-size: 30px;
+        line-height: 38px;
+    }
+    
+    .promo-content__info {
+        font-size: 13px;
+        line-height: 15.73px;
+    }
+
+    .promo-content__logo {
+        max-width: 80vw;
+    }
 }
 
 @media (min-width: 0px) and (max-width:320px) {
