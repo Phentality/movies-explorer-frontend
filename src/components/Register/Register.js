@@ -87,7 +87,7 @@ function Register() {
                         type='email'
                         value={formValue.email}
                         onChange={handleChange} />
-                    {!errors?.email && <span id="name-error" className="register__error"></span>}
+                    {!errors?.email && <span id="email-error" className="register__error"></span>}
                     {errors?.email && <span id="email-error" className="register__error">{errors?.email?.message || "Error!"}</span>}
                     <label className='register__label'>Пароль</label>
                     <input
@@ -104,7 +104,7 @@ function Register() {
                         type='password'
                         value={formValue.password}
                         onChange={handleChange} />
-                    {!errors?.password && <span id="name-error" className="register__error"></span>}
+                    {!errors?.password && <span id="password-error" className="register__error"></span>}
                     {errors?.password && <span id="password-error" className="register__error">{errors?.password?.message || "Error!"}</span>}
                     <button className="register__button" type="submit" aria-label="Зарегистрироваться" name="signup" value="">Зарегистрироваться</button>
                 </form>

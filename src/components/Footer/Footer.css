@@ -50,7 +50,6 @@
 .footer__year {
     margin: 0;
     padding: 0;
-    text-align: none;
     color: #FFFFFF;
 }
 
@@ -126,7 +125,6 @@
 .footer__year {
     margin: 18px 0 0 0;
     padding: 0;
-    text-align: none;
     color: #8B8B8B;
 }
 
