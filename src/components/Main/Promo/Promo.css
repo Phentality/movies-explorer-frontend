@@ -1,0 +1,231 @@
+.promo {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0 auto 0;
+    padding: 0 70px 0;
+    background-color: #073042;
+}
+
+.promo-content {
+    max-width: 1140px;
+    margin: 0px auto 0px;
+}
+
+.promo-content__container {
+    max-width: 1140px;
+    margin: 0px auto 0px;
+    padding: 75px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.promo-content__text-content {
+    max-width: 640px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    justify-content: space-between;
+}
+
+.promo-content__title {
+    font-family: inherit;
+    max-width: 640px;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 58px;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+}
+
+.promo-content__info {
+    font-family: inherit;
+    max-width: 310px;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15.73px;
+    margin: 36px 0 0;
+    padding: 0;
+    opacity: 50%;
+    color: #FFFFFF;
+}
+
+.promo-content__logo {
+    max-width: 35vw;
+    height:auto;
+    margin: 0;
+    padding: 0;
+}
+
+.promo-content__button {
+    font-family: inherit;
+    width: 130px;
+    height: 36px;
+    background-image: url(../../../images/Langing-button.svg);
+    background-color: transparent;
+    background-position: 0px 0px;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 84px 0 75px;
+    color: #FFFFFF;
+    padding:0;
+}
+
+.promo-content__button-text {
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.promo-content__button-text:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+@media (min-width: 768px) and (max-width:1041px) {
+.promo-content__logo {
+    max-width: 25vw;
+    height:auto;
+    margin: 0;
+    padding: 0;
+}
+}
+
+@media (min-width: 320px) and (max-width:768px) {
+.promo {
+    max-width: 768px;
+    padding: 0 44px 0;
+}
+
+.promo-content {
+    max-width: 680px;
+    margin: 0px auto 0px;
+}
+
+.promo-content__container {
+    max-width: 680px;
+    margin: 0px auto 0px;
+    padding: 140px 0 0 0;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.promo-content__text-content {
+    max-width: 680px;
+    margin: 48px auto 0;
+    padding: 0;
+}
+
+.promo-content__title {
+    font-family: inherit;
+    max-width: 680px;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.promo-content__info {
+    font-family: inherit;
+    max-width: 260px;
+    margin: 22px auto 0;
+    padding: 0;
+    text-align: center;
+}
+
+.promo-content__logo {
+    max-width: 310px;
+    margin: 0;
+    padding: 0;
+}
+
+.promo-content__button-container {
+    padding: 0 0 78px;
+    margin: 0;
+}
+
+.promo-content__button {
+    display: block;
+    margin: 87px auto 0;
+}
+}
+
+@media (min-width: 320px) and (max-width:430px) {
+    .promo-content__title {
+        max-width: 330px;
+        font-size: 30px;
+        line-height: 38px;
+    }
+    
+    .promo-content__info {
+        font-size: 13px;
+        line-height: 15.73px;
+    }
+
+    .promo-content__logo {
+        max-width: 80vw;
+    }
+}
+
+@media (min-width: 0px) and (max-width:320px) {
+    .promo {
+    max-width: 320px;
+    padding: 0 10px 0;
+}
+
+.promo-content {
+    max-width: 300px;
+    margin: 0px auto 0px;
+    padding: 0;
+}
+
+.promo-content__container {
+    max-width: 300px;
+    margin: 0px auto 0px;
+    padding: 70px 0 0 0;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+.promo-content__text-content {
+    max-width: 320px;
+    margin: 41px auto 0;
+    padding: 0;
+}
+
+.promo-content__logo {
+    max-width: 210px;
+    margin: 0;
+    padding: 0;
+}
+
+.promo-content__title {
+    max-width: 300px;
+    font-size: 28px;
+    line-height: 38px;
+    text-align: center;
+}
+
+.promo-content__info {
+    font-family: inherit;
+    max-width: 260px;
+    margin: 24px auto 0;
+    text-align: center;
+}
+
+.promo-content__button-container {
+    padding: 0 0 30px;
+    margin: 0;
+}
+
+.promo-content__button {
+    display: block;
+    padding: 0;
+    margin: 80px auto 0;
+}
+}

@@ -1,0 +1,105 @@
+.search-form {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0 auto 0;
+    padding: 70px 70px 0;
+    background-color: #202020;
+}
+
+.search-form__container {
+    max-width: 1140px;
+    height: 72px;
+    margin: 0 auto 0;
+    padding: 0;
+    border: 1.5px solid rgba(170, 170, 170, 0.2);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.search-form__form {
+    max-width: 1010px;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    display: block;
+    padding: 25px 0 25px 25px;
+    border: 0;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: none;
+    background-color: transparent;
+    font-style: normal;
+    margin: 0;
+    color: white;
+}
+
+.search-form__button {
+    width: 100px;
+    max-height: 52px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 10px 10px 10px 0;
+    padding: 0;
+    text-align: center;
+    background-color: #4285F4;
+    border-radius: 5px;
+    background-position: 0px 0px;
+    color: #FFFFFF;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.search-form__button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media (min-width: 320px) and (max-width:768px) {
+    .search-form {
+        max-width: 768px;
+        padding: 68px 30px 0;
+    }
+    
+    .search-form__container {
+        max-width: 708px;
+    }
+    
+    .search-form__form {
+        max-width: 570px;
+    }
+}
+
+@media (min-width: 0px) and (max-width:320px) {
+    .search-form {
+    max-width: 320px;
+    padding: 66px 14px 0;
+}
+
+.search-form__container {
+    max-width: 292px;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.search-form__form {
+    max-width: 194px;
+    font-size: 16px;
+    line-height: 16px;
+    display: block;
+    padding: 20px 0 20px 12px;
+}
+
+.search-form__button {
+    width: 80px;
+    max-height: 44px;
+    margin: 6px 6px 6px 0;
+}
+
+}

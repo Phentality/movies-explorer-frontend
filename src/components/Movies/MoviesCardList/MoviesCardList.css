@@ -1,0 +1,100 @@
+.movies-card-list {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0 auto 0;
+    padding: 80px 70px 0;
+    background-color: #202020;
+}
+
+.movies-card-list__grid {
+    max-width: 1140px;
+    margin: 0 auto 0;
+    padding: 0;
+    background-color: #202020;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: repeat(2, minmax(100px, 1fr));
+    grid-auto-flow: row;
+    gap: 32px;
+}
+
+.movies-card-list__more-button {
+    display: block;
+    font-family: inherit;
+    max-width: 86vh;
+    width: 100%;
+    height: 36px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14.52px;
+    background-color: #2F2F2F;
+    background-position: 0px 0px;
+    border: none;
+    color: #FFFFFF;
+    margin: 60px auto 80px;
+    padding: 0;
+    border-radius: 6px;
+}
+
+.movies-card-list__more-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media (min-width: 500px) and (max-width:790px) {
+    .movies-card-list {
+        max-width: 768px;
+        padding: 80px 30px 0;
+    }
+    
+    .movies-card-list__grid {
+        max-width: 708px;
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        grid-template-rows: repeat(2, minmax(100px, 1fr));
+        grid-auto-flow: row;
+        gap: 35px 24px;
+    }
+    
+    .movies-card-list__more-button {
+        margin: 50px auto 80px;
+    }
+}
+
+@media (min-width: 320px) and (max-width:500px) {
+    .movies-card-list {
+        max-width: 768px;
+        padding: 80px 10px 0;
+    }
+    .movies-card-list__grid {
+        max-width: 300px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-auto-flow: row;
+        gap: 16px;
+    }
+}
+
+@media (min-width: 0px) and (max-width:320px) {
+        .movies-card-list {
+        max-width: 320px;
+        padding: 50px 10px 0;
+    }
+
+    .movies-card-list__grid {
+        max-width: 300px;
+        margin: 0 auto 0;
+        padding: 0;
+        background-color: #202020;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-auto-flow: row;
+        gap: 16px;
+    }
+
+    .movies-card-list__more-button {
+        font-family: inherit;
+        max-width: 68vh;
+        height: 36px;
+        margin: 80px auto 80px;
+    }
+}

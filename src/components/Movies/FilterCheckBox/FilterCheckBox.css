@@ -1,0 +1,100 @@
+.filter-check-box {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0 auto 0;
+    padding: 0 70px 0;
+    background-color: #202020;
+}
+
+.filter-check-box__container {
+    max-width: 1140px;
+    margin: 0 auto 0;
+    border-bottom: 1px solid rgba(170, 170, 170, 0.2);
+}
+
+.filter-check-box__button-container {
+    max-width: 167px;
+    margin: 0;
+    padding: 26px 0 43px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.filter-check-box__button {
+    width: 36px;
+    height: 20px;
+    align-self: center;
+    background-image: url(../../../images/shortfilmbutton-active.svg);
+    background-color: transparent;
+    background-position: 0px 0px;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-check-box__button-unactive {
+    width: 36px;
+    height: 20px;
+    align-self: center;
+    background-image: url(../../../images/shortfilmbutton-unactive.svg);
+    background-color: transparent;
+    background-position: 0px 0px;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.filter-check-box__text {
+    max-width: 117px;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
+    color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+}
+
+@media (min-width: 320px) and (max-width:768px) {
+    .filter-check-box {
+        max-width: 768px;
+        padding: 0 30px 0;
+    }
+    
+    .filter-check-box__container {
+        max-width: 708px;
+    }
+    
+    .filter-check-box__button-container {
+        padding: 24px 0 52px;
+    }
+}
+
+@media (min-width: 0px) and (max-width:320px) {
+    .filter-check-box {
+        max-width: 320px;
+        padding: 0 14px 0;
+    }
+    
+    .filter-check-box__container {
+        max-width: 292px;
+    }
+    
+    .filter-check-box__button-container {
+        max-width: 148px;
+        padding: 30px 0 63px;
+    }
+    
+    
+    .filter-check-box__text {
+        max-width: 99px;
+        font-size: 11px;
+        line-height: 18px;
+    }
+}

@@ -1,0 +1,56 @@
+.saved-movies-card-list {
+    margin: 0 auto 0;
+    padding: 80px 70px 230px;
+    background-color: #202020;
+}
+
+.saved-movies-card-list__grid {
+    max-width: 1140px;
+    margin: 0 auto 0;
+    padding: 0;
+    background-color: #202020;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px, 1fr));
+    grid-template-rows: minmax(100px, 1fr);
+    grid-auto-flow: row;
+    gap: 32px;
+}
+
+@media (min-width: 500px) and (max-width:790px) {
+    .saved-movies-card-list {
+        max-width: 768px;
+        padding: 80px 30px 170px;
+    }
+    
+    .saved-movies-card-list__grid {
+        max-width: 708px;
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        gap: 35px 24px;
+    }
+}
+@media (min-width: 320px) and (max-width:500px) {
+    .saved-movies-card-list {
+        max-width: 768px;
+        padding: 80px 10px 0;
+    }
+    .saved-movies-card-list__grid {
+        max-width: 300px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-auto-flow: row;
+        gap: 16px;
+    }
+}
+@media (min-width: 0px) and (max-width:320px) {
+    .saved-movies-card-list {
+        max-width: 320px;
+        padding: 50px 10px 170px;
+    }
+
+    .saved-movies-card-list__grid {
+        max-width: 300px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        gap: 16px;
+    }
+}

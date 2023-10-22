@@ -1,0 +1,211 @@
+.techs {
+    font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
+    margin: 0 auto 0;
+    padding: 0 70px 0;
+    background-color: #272727;
+}
+
+.techs__header {
+    max-width: 1140px;
+    margin: 0 auto 0;
+    border-bottom: 1px solid rgba(218, 218, 218, 1);
+}
+
+.techs__header-text {
+    font-family: inherit;
+    max-width: 600px;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 26.63px;
+    letter-spacing: -1px;
+    margin: 0;
+    padding: 100px 0 23px;
+    color: #FFFFFF;
+}
+
+.techs__text {
+    font-family: inherit;
+    max-width: 460px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: -0.6px;
+    text-align: center;
+    margin: 0 auto 100px;
+    color: #FFFFFF;
+}
+
+.techs__title {
+    max-width: 600px;
+    font-size: 50px;
+    line-height: 58px;
+    letter-spacing: -2px;
+    margin: 90px auto 26px;
+}
+
+.techs__card-text {
+    font-size: 14px;
+    line-height: 16.94px;
+    margin: 21px auto 22px;
+}
+
+.techs__technologies {
+    max-width: 700px;
+    margin: 0 auto 0;
+    padding: 0 0 100px;
+    list-style-type: none;
+    display: flex;
+    justify-content:space-around;
+}
+
+.techs__card {
+    width: 90px;
+    background-color: #303030;
+    border-radius: 10px;
+}
+
+@media (min-width: 320px) and (max-width:768px) {
+    .techs {
+        max-width: 768px;
+        padding: 0 50px 0;
+    }
+    
+    .techs__header {
+        max-width: 668px;
+        margin: 0 auto 0;
+        border-bottom: 1px solid rgba(218, 218, 218, 1);
+    }
+    
+    .techs__header-text {
+        max-width: 652px;
+        margin: 0;
+        padding: 90px 0 23px;
+    }
+    
+    .techs__text {
+        font-family: inherit;
+        max-width: 460px;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: -1px;
+        text-align: center;
+        margin: 0 auto 83px;
+        color: #FFFFFF;
+    }
+    
+    .techs__title {
+        max-width: 600px;
+        font-size: 50px;
+        line-height: 58px;
+        letter-spacing: -2px;
+        margin: 80px auto 22px;
+    }
+    
+    
+    .techs__card-text {
+        font-size: 14px;
+        line-height: 16.94px;
+        margin: 21px auto 22px;
+    }
+    
+    .techs__technologies {
+        max-width: 660px;
+        margin: 0 auto 0;
+        padding: 0 0 90px;
+        list-style-type: none;
+        display: flex;
+        justify-content:space-around;
+    }
+    
+    .techs__card {
+        max-width: 84px;
+        height: 57px;
+    }
+}
+@media (min-width: 321px) and (max-width:584px) {
+    .techs__card-text {
+        font-size: 12px;
+        line-height: 14.52px;
+        margin: 21px auto 22px;
+    }
+
+    .techs__technologies {
+        max-width: 178px;
+        margin: 0 auto 0;
+        padding: 0 0 70px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 57px 57px 57px 57px;
+        grid-auto-flow: row;
+        gap: 10px;
+    }
+}
+
+@media (min-width: 321px) and (max-width:390px) {
+        .techs__title {
+        max-width: 600px;
+        font-size: 30px;
+        line-height: 48px;
+    }
+}
+
+@media (min-width: 0px) and (max-width:320px) {
+    .techs {
+        max-width: 320px;
+        padding: 0 10px 0;
+        background-color: #202020;
+    }
+
+    .techs__header {
+        max-width: 284px;
+        margin: 0 auto 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 1);
+    }
+
+    .techs__header-text {
+        max-width: 284px;
+        font-size: 18px;
+        line-height: 21.78px;
+        margin: 0;
+        padding: 70px 0 28px;
+    }
+
+    .techs__text {
+        max-width: 292px;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: -1px;
+        margin: 0 auto 50px;
+    }
+
+    .techs__title {
+        max-width: 292px;
+        font-size: 30px;
+        line-height: 36.31px;
+        letter-spacing: -0.65px;
+        margin: 60px auto 23px;
+    }
+
+    .techs__card-text {
+        font-size: 12px;
+        line-height: 14.52px;
+        margin: 21px auto 22px;
+    }
+
+    .techs__technologies {
+        max-width: 178px;
+        margin: 0 auto 0;
+        padding: 0 0 70px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 57px 57px 57px 57px;
+        grid-auto-flow: row;
+        gap: 10px;
+    }
+
+    .techs__card {
+        width: 84px;
+    }
+    }
