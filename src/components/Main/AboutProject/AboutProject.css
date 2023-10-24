@@ -159,6 +159,12 @@
         max-width: 528px;
     }
 }
+@media (min-width: 321px) and (max-width:430px) {
+.about-project__text {
+    font-size: 10px;
+    line-height: 12px;
+}
+}
 
 @media (min-width: 321px) and (max-width:657px) {
         .about-project__content {
