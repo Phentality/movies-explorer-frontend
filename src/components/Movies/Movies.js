@@ -7,14 +7,12 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 function Movies(props) {
   const currentUser = React.useContext(CurrentUserContext);
 
-
-
   return (
     <main>
       <CurrentUserContext.Provider value={currentUser}>
         <SearchForm />
         <FilterCheckBox />
-        <MoviesCardList />
+        <MoviesCardList movies={props.movies} />
       </CurrentUserContext.Provider>
     </main>
   )

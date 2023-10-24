@@ -12,7 +12,7 @@ function MoviesCard({ card }) {
     const cardSaveButtonClassName = (
         `${isSaved ? 'movies-card__savebtn_active' : 'movies-card__savebtn'}`
     );*/
-
+    const imageUrl = card.image.url;
     const minutes = card.duration % 60;
 
     const hours = (card.duration - minutes) / 60;
@@ -22,10 +22,10 @@ function MoviesCard({ card }) {
     return (
         <li className="movies-card">
             <div className="movies-card__title-container">
-                <h2 className='movies-card__title'>{card.name}</h2>
+                <h2 className='movies-card__title'>{card.nameRU}</h2>
                 <h3 className='movies-card__duration'>{duration}</h3>
             </div>
-            <img className="movies-card__image" src={card.image} alt={card.name} />
+            <img className="movies-card__image" src={`https://api.nomoreparties.co/${imageUrl}`} alt={card.nameRU} />
             <div className="movies-card__saved-container">
                 <button className="movies-card__savebtn" type="button" aria-label="Сохранить" name="save">Сохранить</button>
             </div>
