@@ -41,8 +41,8 @@ class Api {
             .then(this._chechRes)
     }
 
-    addMovie(country, director, duration, year, description, image, trailerLink, thumbnail, movieId, nameRU, nameEN) {
-        return fetch(`${this._baseUrl}/cards`, {
+    addMovie(country, director, duration, year, description, image, trailerLink, thumbnail, id, nameRU, nameEN) {
+        return fetch(`${this._baseUrl}/movies`, {
             method: 'POST',
             credentials: 'include',
             body: JSON.stringify({
@@ -54,7 +54,7 @@ class Api {
                 image: image,
                 trailerLink: trailerLink,
                 thumbnail: thumbnail,
-                movieId: movieId,
+                id: id,
                 nameRU: nameRU,
                 nameEN: nameEN,
             }),
@@ -69,7 +69,7 @@ class Api {
     }
 
     deleteMovie(id) {
-        return fetch(`${this._baseUrl}/cards/${id}`, {
+        return fetch(`${this._baseUrl}/movies/${id}`, {
             method: 'DELETE',
             credentials: 'include',
             body: JSON.stringify({

@@ -36,6 +36,19 @@ function Register(props) {
         mode: "onChange"
     });
 
+    function userLogin() {
+        const { email, password } = formValue;
+        Auth.authorize(email, password).then((data) => {
+            if (data.token) {
+                localStorage.setItem('jwt', data.token);
+                navigate('/movies', { replace: true });
+                props.handleLogin();
+            }
+        })
+            .catch((err) => {
+                console.log(err);
+            })
+    };
 
     const handleSumbit = (e) => {
         e.preventDefault();
@@ -43,14 +56,14 @@ function Register(props) {
         Auth.register(name, email, password).then((res) => {
             setErrorMessage('');
             setConfirmMessage("Пользователь успешно зарегистрирован");
-            console.log(res);
+            setTimeout(userLogin, 2000);
         })
-            .catch((err) => {
+        .catch((err) => {
                 setConfirmMessage('');
                 console.log(err);
                 if (err === "Ошибка: 409") { setErrorMessage("Пользователь с таким email уже зарегистрирован") }
                 else { setErrorMessage("Ошибка сервера") }
-            })
+        })
     }
 
     const nameValidation = register('name', {

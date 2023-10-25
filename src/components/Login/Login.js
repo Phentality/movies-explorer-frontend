@@ -42,7 +42,7 @@ function Login(props) {
             if (data.token) {
                 localStorage.setItem('jwt', data.token);
                 setFormValue({ email: '', password: '' });
-                navigate('/', { replace: true });
+                navigate('/movies', { replace: true });
                 props.handleLogin();
             }
         })

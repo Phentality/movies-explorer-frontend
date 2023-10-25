@@ -37,13 +37,15 @@ function App() {
   };
 
   React.useEffect(() => {
-    api.getUserInfo()
+    if (loggedIn){
+      api.getUserInfo()
       .then((data) => {
         setCurrentUser(data);
       })
       .catch((err) => {
         console.log(err);
       })
+    }
   }, [loggedIn]);
 
   const tokenCheck = () => {
@@ -90,7 +92,7 @@ function App() {
           <Route path="/movies" element={<ProtectedRoute loggedIn={loggedIn} component={Movies} movies={allMovies} />} />
           <Route path="/saved-movies" element={<ProtectedRoute loggedIn={loggedIn} component={SavedMovies} movies={allMovies} />} />
           <Route path="/profile" element={<ProtectedRoute loggedIn={loggedIn} component={Profile} handleLogOut={handleLogOut} />} />
-          <Route path="/signup" element={<Register />} />
+          <Route path="/signup" element={<Register handleLogin={handleLogin} />} />
           <Route path="/signin" element={<Login handleLogin={handleLogin} />} />
           <Route path="/not-found" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/not-found" />} />
