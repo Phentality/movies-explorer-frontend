@@ -35,7 +35,7 @@ function Movies(props) {
   };
 
   function changeButton(id) {
-    console.log(savedMovies)
+    console.log(id);
     setIsSaved(!isSaved);
   }
 
