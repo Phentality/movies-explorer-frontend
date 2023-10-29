@@ -1,14 +1,25 @@
 import React from 'react';
 
 
-function FilterCheckBox() {
-  const [isActive, setIsActive] = React.useState(false);
+function FilterCheckBox(props) {
+  /*const [isActive, setIsActive] = React.useState(false);
 
+  /*React.useEffect(() => {
+    if (localStorage.getItem('searchFilter')) {
+      const status = (localStorage.getItem('searchFilter'));
+      setIsActive(!status);
+      console.log((localStorage.getItem('searchFilter')));
+    }
+    
+  }, [])*/
+  
   function handleClick() {
-    setIsActive(!isActive);
+    props.onClick();
   }
+
+
   const filterCheckBoxClassName = (
-    `${isActive ? 'filter-check-box__button' : 'filter-check-box__button-unactive'}`
+    `${props.isActive ? 'filter-check-box__button' : 'filter-check-box__button-unactive'}`
   );
 
   return (

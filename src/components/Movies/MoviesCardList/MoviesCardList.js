@@ -1,39 +1,64 @@
 import React from 'react';
 import MoviesCard from '../MoviesCard/MoviesCard';
 import { useResize } from '../../../hooks/useResize';
-import api from '../../../utils/MainApi'
 
 function MoviesCardList(props) {
-    const resize = useResize();
-
     const cards = props.movies;
+    const resize = useResize();
+    const [allMovies, setAllMovies] = React.useState(false);
+    const [count, setcount] = React.useState('');
+    let showCards = cards.slice(0, count);
 
-    function saveCard(card) {
-        api.addMovie(card.country,
-            card.director,
-            card.duration,
-            card.year,
-            card.description,
-            `https://api.nomoreparties.co${card.image.url}`,
-            card.trailerLink,
-            `https://api.nomoreparties.co${card.image.formats.thumbnail.url}`,
-            card.id,
-            card.nameRU,
-            card.nameEN)
-            .then((data) => {
-                console.log(data);
-            })
-            .catch((err) => {
-                console.log(err);
-            })
+    React.useEffect(() => {
+        if (resize.isScreenLg) {
+            setcount(12);
+        }
+        if (!resize.isScreenLg && resize.isScreenMd) {
+            setcount(8);
+        }
+        if (!resize.isScreenMd && resize.isScreenSm) {
+            setcount(5);
+        }
+    }, [resize.isScreenLg, resize.isScreenMd, resize.isScreenSm])
+
+    if (showCards === cards) {
+        setAllMovies(true);
+    }
+
+    React.useEffect(() => {
+        if (showCards.length === cards.length || cards.length === 0) {
+            setAllMovies(true);
+        }
+        else {
+            setAllMovies(false);
+        }
+    }, [count, cards])
+
+    let countAdd;
+    async function addItem() {
+        if (resize.isScreenLg) {
+            countAdd = 3
+        }
+        if (!resize.isScreenLg && resize.isScreenMd) {
+            countAdd = 2
+        }
+        if (!resize.isScreenMd && resize.isScreenSm) {
+            countAdd = 2
+        }
+        setcount(count + countAdd);
     }
 
     return (
         <section className='movies-card-list'>
+            {props.empty && <span id="movies-card-list-error" className="movies-card-list__error">Ничего не найдено</span>}
             <ul className='movies-card-list__grid'>
-                {cards.map((card) => <MoviesCard key={card.id} card={card} onCardSave={saveCard} isSaved={props.isSaved} onCardClick={props.changeButton} />)}
+                {showCards.map((card) => <MoviesCard key={card.id} card={card} onCardSave={props.saveCard} onDeleteCard={props.deleteCard} savedCards={props.savedCards} onCardClick={props.changeButton} />)}
             </ul>
-            <button className='movies-card-list__more-button'>Ещё</button>
+            {!allMovies && <button className='movies-card-list__more-button'
+                type="click"
+                aria-label="Сохранить"
+                name="save"
+                onClick={addItem}>Ещё</button>}
         </section>)
 }
 

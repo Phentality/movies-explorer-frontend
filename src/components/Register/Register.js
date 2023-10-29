@@ -62,6 +62,7 @@ function Register(props) {
                 setConfirmMessage('');
                 console.log(err);
                 if (err === "Ошибка: 409") { setErrorMessage("Пользователь с таким email уже зарегистрирован") }
+                if (err === "Ошибка: 400") { setErrorMessage("Не все поля заполнены") }
                 else { setErrorMessage("Ошибка сервера") }
         })
     }

@@ -1,11 +1,16 @@
 import React from 'react';
 
-
 function SearchForm(props) {
-    const valueRef = React.useRef();
+    const valueRef = React.useRef('');
     const [formValue, setFormValue] = React.useState({
         film: '',
     });
+    const [error, setError] = React.useState(false);
+
+    React.useEffect(() => {
+        valueRef.current.value = props.value;
+    }, [props.value]);
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -16,12 +21,19 @@ function SearchForm(props) {
         });
     };
 
+
     function handleSubmit(e) {
-      e.preventDefault();
-  
-      props.searchResponse({
-        value: valueRef.current.value.toLowerCase()
-      });
+        e.preventDefault();
+
+        if (valueRef.current.value === '') {
+            setError(true);
+        }
+        else {
+            setError(false);
+            props.searchResponse({
+                value: valueRef.current.value.toLowerCase()
+            });
+        }
     }
 
     return (
@@ -32,10 +44,11 @@ function SearchForm(props) {
                     name='film'
                     placeholder="Фильм"
                     ref={valueRef}
-                    onChange={handleChange}
-                    required />
+                    onChange={handleChange} />
                 <button className="search-form__button" type="submit" aria-label="Поиск" name="search">Поиск</button>
             </form>
+            {!error && <span id="search-form-error" className="search-form__error"></span>}
+            {error && <span id="search-form-error" className="search-form__error">Введите ключевое слово</span>}
         </section>)
 }
 

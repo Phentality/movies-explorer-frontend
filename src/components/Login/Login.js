@@ -59,7 +59,6 @@ function Login(props) {
             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
             message: "Нужно ввести E-mail"
         }
-
     });
 
     const passwordValidation = register('password', {     
@@ -71,8 +70,7 @@ function Login(props) {
         maxLength: {
             value: 30,
             message: "Максимум 30 символов"
-        },
-    
+        },  
     });
 
     return (

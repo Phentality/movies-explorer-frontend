@@ -21,6 +21,7 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState({});
   const [allMovies, setAllMovies] = React.useState([]);
   const [loggedIn, setLoggedIn] = React.useState(false);
+  const [profileErrorMessage, setProfileErrorMessage] = React.useState('');
 
   React.useEffect(() => {
     moviesApi.getInitialMovies()
@@ -37,14 +38,14 @@ function App() {
   };
 
   React.useEffect(() => {
-    if (loggedIn){
+    if (loggedIn) {
       api.getUserInfo()
-      .then((data) => {
-        setCurrentUser(data);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
+        .then((data) => {
+          setCurrentUser(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        })
     }
   }, [loggedIn]);
 
@@ -58,7 +59,8 @@ function App() {
             navigate('/', { replace: true });
           }
         })
-      }}
+      }
+    }
   }
 
   React.useEffect(() => {
@@ -83,6 +85,18 @@ function App() {
     setLoggedIn(false);
   }
 
+  function editProfile({ name, email }) {
+    api.editUserInfo(name, email)
+      .then((data) => {
+        setProfileErrorMessage('');
+        setCurrentUser(data.data);
+      })
+      .catch((err) => {
+        if (err === "Ошибка: 400") { setProfileErrorMessage("Неправильно введены данные") }
+        else { setProfileErrorMessage("Ошибка сервера") };
+      })
+  }
+
   return (
     <div>
       <CurrentUserContext.Provider value={currentUser}>
@@ -91,7 +105,7 @@ function App() {
           <Route path="/" element={<Main />} />
           <Route path="/movies" element={<ProtectedRoute loggedIn={loggedIn} component={Movies} movies={allMovies} />} />
           <Route path="/saved-movies" element={<ProtectedRoute loggedIn={loggedIn} component={SavedMovies} movies={allMovies} />} />
-          <Route path="/profile" element={<ProtectedRoute loggedIn={loggedIn} component={Profile} handleLogOut={handleLogOut} />} />
+          <Route path="/profile" element={<ProtectedRoute loggedIn={loggedIn} errorMessage={profileErrorMessage} onUpdateUser={editProfile} component={Profile} handleLogOut={handleLogOut} />} />
           <Route path="/signup" element={<Register handleLogin={handleLogin} />} />
           <Route path="/signin" element={<Login handleLogin={handleLogin} />} />
           <Route path="/not-found" element={<NotFound />} />

@@ -35,6 +35,20 @@
     color: white;
 }
 
+.search-form__error {
+    display: block;
+    max-width: 1140px;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 auto 0;
+    padding: 5px 0 0;
+    line-height: 24px;
+    letter-spacing: 0em;
+    color: crimson;
+    text-align: left;
+}
+
 .search-form__button {
     width: 100px;
     max-height: 52px;
