@@ -19,15 +19,34 @@ function Movies(props) {
   const [empty, setEmpty] = React.useState(false);
   const seacrhStorage = localStorage.getItem('search');
   const moviesStorage = JSON.parse(localStorage.getItem('movies'));
-  const searchFilterStorage = localStorage.getItem('searchFilter');
+  const searchFilterStorage = JSON.parse(localStorage.getItem('searchFilter'));
+  const shortMoviesStorage = JSON.parse(localStorage.getItem('shortMovies'));
 
-  async function changeShortMovie() {
-    await setShortMovie(!shortMovie);
+  function changeShortMovie() {
+    setShortMovie(!shortMovie);
+    if (!shortMovie) {
+      if (shortMoviesStorage === null) {
+        setError("Проведите поиск");
+      }
+      else {
+        setError("");
+        setMovies(shortMoviesStorage);
+      }
+    }
+    else {
+      if (moviesStorage === null) {
+        setError("Проведите поиск");
+      }
+      else {
+        setError("");
+        setMovies(moviesStorage);
+      }
+    }
   }
 
   React.useEffect(() => {
     localStorage.setItem('searchFilter', shortMovie);
-  }, [shortMovie])
+  }, [shortMovie]);
 
   React.useEffect(() => {
     if (seacrhStorage) {
@@ -41,6 +60,10 @@ function Movies(props) {
       const pastMovies = moviesStorage;
       setMovies(pastMovies);
     }
+    if (searchFilterStorage && shortMoviesStorage) {
+      const pastShortMovies = shortMoviesStorage;
+      setMovies(pastShortMovies);
+    }
   }, [])
 
   React.useEffect(() => {
@@ -52,38 +75,6 @@ function Movies(props) {
         console.log(err);
       })
   }, [isChange]);
-
-  /*React.useEffect(() => {
-    searchShortFilms();
-  }, [shortMovie]);*/
-
-
-  /*async function searchShortFilms() {
-    setPreloaderVisibility(true);
-    try {
-      if (!shortMovie) {
-        const shortMovies = movies.filter(card => {
-          const duration = card.duration;
-          if (duration <= 40) {
-            return true
-          }
-          return false
-        })
-        localStorage.setItem('shortMovies', JSON.stringify(shortMovies));
-        setMovies(shortMovies)
-      }
-      else {
-        const pastMovies = JSON.parse(localStorage.getItem('movies'));
-        setMovies(pastMovies);
-      }
-    }
-    catch {
-      setError('Что-то пошло не так');
-    }
-    finally {
-      setPreloaderVisibility(false);
-    }
-  };*/
 
   async function Seacrh(data) {
     setPreloaderVisibility(true);
@@ -102,24 +93,26 @@ function Movies(props) {
       else {
         setEmpty(false);
       }
+      const shortMovies = searchResponse.filter(card => {
+        const duration = card.duration;
+        if (duration <= 40) {
+          return true
+        }
+        return false
+      })
+      localStorage.setItem('shortMovies', JSON.stringify(shortMovies))
       localStorage.setItem('movies', JSON.stringify(searchResponse));
+      setError('');
       setMovies(searchResponse);
       if (shortMovie) {
-        const shortMovies = searchResponse.filter(card => {
-          const duration = card.duration;
-          if (duration <= 40) {
-            return true
-          }
-          return false
-        })
         if (shortMovies.length === 0) {
           setEmpty(true)
         }
         else {
           setEmpty(false);
         }
+        setError('');
         setMovies(shortMovies)
-        localStorage.setItem('shortMovies', JSON.stringify(shortMovies))
       }
     }
     catch {
@@ -154,7 +147,7 @@ function Movies(props) {
     <main>
       <CurrentUserContext.Provider value={currentUser}>
         <SearchForm searchResponse={Seacrh} value={searchValue} />
-        <FilterCheckBox onClick={changeShortMovie} isActive={shortMovie}/>
+        <FilterCheckBox onClick={changeShortMovie} isActive={shortMovie} />
         <Preloader visibility={preloaderVisibility} />
         <MoviesCardList movies={movies} savedCards={savedMovies} ifError={error} saveCard={saveCard} deleteCard={deleteCard} empty={empty} />
       </CurrentUserContext.Provider>

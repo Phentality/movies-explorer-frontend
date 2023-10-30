@@ -32,7 +32,7 @@ function MoviesCardList(props) {
         else {
             setAllMovies(false);
         }
-    }, [count, cards])
+    }, [count, cards, showCards.length])
 
     let countAdd;
     async function addItem() {
@@ -50,6 +50,7 @@ function MoviesCardList(props) {
 
     return (
         <section className='movies-card-list'>
+            {props.ifError && <span id="movies-card-list-error" className="movies-card-list__error">{props.ifError}</span>}
             {props.empty && <span id="movies-card-list-error" className="movies-card-list__error">Ничего не найдено</span>}
             <ul className='movies-card-list__grid'>
                 {showCards.map((card) => <MoviesCard key={card.id} card={card} onCardSave={props.saveCard} onDeleteCard={props.deleteCard} savedCards={props.savedCards} onCardClick={props.changeButton} />)}
