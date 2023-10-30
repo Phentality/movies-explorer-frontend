@@ -1,4 +1,4 @@
-export const BASE_URL = 'https://api.phentality.nomoredomainsrocks.ru'
+export const BASE_URL = 'https://api.phental.nomoredomainsrocks.ru'
 
 const checkRes = (res) => {
   if (res.ok) {
