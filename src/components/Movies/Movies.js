@@ -26,23 +26,59 @@ function Movies(props) {
     setShortMovie(!shortMovie);
     if (!shortMovie) {
       if (shortMoviesStorage === null) {
-        setError("Проведите поиск");
+        setEmpty(true);
       }
       else {
+        setEmpty(false);
         setError("");
         setMovies(shortMoviesStorage);
       }
     }
     else {
       if (moviesStorage === null) {
-        setError("Проведите поиск");
+        setEmpty(true);
       }
       else {
         setError("");
+        setEmpty(false);
         setMovies(moviesStorage);
       }
     }
   }
+
+  React.useEffect(() => {
+    setPreloaderVisibility(true);
+    try {
+      const searchResponse = cards.filter(card => {
+        const name = seacrhStorage;
+        if (card.nameRU.toLowerCase().includes(name)) {
+          return true
+        }
+        return false
+      })
+      const shortMovies = searchResponse.filter(card => {
+        const duration = card.duration;
+        if (duration <= 40) {
+          return true
+        }
+        return false
+      })
+      localStorage.setItem('shortMovies', JSON.stringify(shortMovies))
+      localStorage.setItem('movies', JSON.stringify(searchResponse));
+      setError('');
+      setMovies(searchResponse);
+      if (searchFilterStorage) {
+        setError('');
+        setMovies(shortMovies)
+      }
+    }
+    catch {
+      setError('Что-то пошло не так');
+    }
+    finally {
+      setPreloaderVisibility(false);
+    }
+  }, [cards, seacrhStorage, searchFilterStorage]);
 
   React.useEffect(() => {
     localStorage.setItem('searchFilter', shortMovie);
@@ -81,7 +117,6 @@ function Movies(props) {
     try {
       const searchResponse = await cards.filter(card => {
         const name = data.value;
-        localStorage.setItem('search', name);
         if (card.nameRU.toLowerCase().includes(name)) {
           return true
         }

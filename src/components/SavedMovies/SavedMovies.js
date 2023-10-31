@@ -8,83 +8,73 @@ import api from '../../utils/MainApi';
 
 function SavedMovies(props) {
   const currentUser = React.useContext(CurrentUserContext);
+  const [allSavedMovies, setAllSavedMovies] = React.useState([]);
+  const searchValue = '';
   const [movies, setMovies] = React.useState([]);
-  const [shortMovie, setShortMovie] = React.useState(false);
-  const [savedMovies, setSavedMovies] = React.useState([]);
-  const [searchValue, setSearchValue] = React.useState('');
+  const [shortMovie, setShortMovie] = React.useState(false)
   const [error, setError] = React.useState('');
   const [preloaderVisibility, setPreloaderVisibility] = React.useState(false);
   const [empty, setEmpty] = React.useState(false);
-  const seacrhStorage = localStorage.getItem('savedSearch');
-  const pastMovies = JSON.parse(localStorage.getItem('savedMovies'));
-  const searchFilterStorage = JSON.parse(localStorage.getItem('SavedSearchFilter'));
-  const SavedShortMoviesStorage = JSON.parse(localStorage.getItem('savedShortMovies'));
-
-  function changeShortMovie() {
-    setShortMovie(!shortMovie);
-    if (!shortMovie) {
-      if (SavedShortMoviesStorage === null) {
-        setError("Проведите поиск");
-      }
-      else {
-        setError("");
-        setMovies(SavedShortMoviesStorage);
-      }
-    }
-    else {
-      if (pastMovies === null) {
-        setError("Проведите поиск");
-      }
-      else {
-        setError("");
-        setMovies(pastMovies);
-      }
-    }
-  }
-
-  React.useEffect(() => {
-    if (seacrhStorage) {
-      setSearchValue(seacrhStorage);
-    }
-    if (searchFilterStorage) {
-      const status = searchFilterStorage;
-      setShortMovie(status);
-    }
-    if (pastMovies) {
-      const pastMovie = pastMovies;
-      setMovies(pastMovie);
-    }
-    if (searchFilterStorage && SavedShortMoviesStorage) {
-      const pastShortMovies = SavedShortMoviesStorage;
-      setMovies(pastShortMovies);
-    }
-  }, [])
-
-  React.useEffect(() => {
-    localStorage.setItem('SavedSearchFilter', shortMovie);
-  }, [shortMovie]);
-
+  const savedSearch = localStorage.getItem('savedSearch');
+  const savedSearchFilter = localStorage.getItem('savedSearchFilter');
 
   React.useEffect(() => {
     api.getSavedMovies()
-      .then((data) => {
-        setSavedMovies(data);
+    .then((data) => {
+      setMovies(data);
+      setAllSavedMovies(data);
+    })
+  }, [])
+
+  React.useEffect(() => {
+    localStorage.setItem('savedMovies', JSON.stringify(movies));
+  }, [movies])
+
+  function changeShortMovie() {
+    setShortMovie(!shortMovie);
+  }
+  
+  React.useEffect(() => {
+    localStorage.setItem('savedSearchFilter', shortMovie);
+  }, [shortMovie]);
+
+  React.useEffect(() => {
+    setPreloaderVisibility(true);
+    try {
+      const searchResponse = allSavedMovies.filter(card => {
+        const name = savedSearch;
+        if (card.nameRU.toLowerCase().includes(name)) {
+          return true
+        }
+        return false
       })
-      .catch((err) => {
-        console.log(err);
+      const shortMovies = searchResponse.filter(card => {
+        const duration = card.duration;
+        if (duration <= 40) {
+          return true
+        }
+        return false
       })
-    if (seacrhStorage !== 'null') {
-      setSearchValue(seacrhStorage);
+      setError('');
+      setMovies(searchResponse);
+      if (shortMovie) {
+        setError('');
+        setMovies(shortMovies);
+      }
     }
-    if (localStorage.getItem('savedMovies')) {
-      setMovies(pastMovies);
+    catch {
+      setError('Что-то пошло не так');
     }
-  }, []);
+    finally {
+      setPreloaderVisibility(false);
+    }
+  }, [savedSearch, savedSearchFilter, shortMovie])
+
 
   async function Seacrh(data) {
     setPreloaderVisibility(true);
     try {
-      const searchResponse = await savedMovies.filter(card => {
+      const searchResponse = await allSavedMovies.filter(card => {
         const name = data.value;
         localStorage.setItem('savedSearch', name);
         if (card.nameRU.toLowerCase().includes(name)) {
@@ -126,53 +116,11 @@ function SavedMovies(props) {
     }
   };
 
-  React.useEffect(() => {
-    async function reSeacrh(data) {
-      setPreloaderVisibility(true);
-      try {
-        const searchResponse = await savedMovies.filter(card => {
-          const name = data;
-          localStorage.setItem('savedSearch', name);
-          if (card.nameRU.toLowerCase().includes(name)) {
-            return true
-          }
-          return false
-        });
-        const shortMovies = searchResponse.filter(card => {
-          const duration = card.duration;
-          if (duration <= 40) {
-            return true
-          }
-          return false
-        })
-        localStorage.setItem('savedShortMovies', JSON.stringify(shortMovies))
-        localStorage.setItem('savedMovies', JSON.stringify(searchResponse));
-        setMovies(searchResponse);
-        if (shortMovie) {
-          if (shortMovies.length === 0) {
-            setEmpty(true)
-          }
-          else {
-            setEmpty(false);
-          }
-          setMovies(shortMovies)
-        }
-      }
-      catch {
-        console.log("What");
-      }
-      finally {
-        setPreloaderVisibility(false);
-      }
-    };
-    reSeacrh(localStorage.getItem('savedSearch'))
-  }, [savedMovies])
-
   function deleteCard(card) {
     api.deleteMovie(card._id).then(() => {
       api.getSavedMovies()
         .then((data) => {
-          setSavedMovies(data);
+          setAllSavedMovies(data);
         })
       setMovies((state) => state.filter((c => c._id !== card._id)));
     })

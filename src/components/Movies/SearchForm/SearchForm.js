@@ -1,6 +1,8 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 function SearchForm(props) {
+    const location = useLocation();
     const valueRef = React.useRef('');
     const [formValue, setFormValue] = React.useState({
         film: '',
@@ -19,6 +21,12 @@ function SearchForm(props) {
             ...formValue,
             [name]: value
         });
+        if (location.pathname === '/movies') {
+            localStorage.setItem('search', value);
+        }
+        if (location.pathname === '/saved-movies') {
+            localStorage.setItem('savedSearch', value);
+        }
     };
 
 
