@@ -6,20 +6,20 @@ function MoviesCardList(props) {
     const cards = props.movies;
     const resize = useResize();
     const [allMovies, setAllMovies] = React.useState(false);
-    const [count, setcount] = React.useState('');
+    const [count, setCount] = React.useState('');
     let showCards = cards.slice(0, count);
 
     React.useEffect(() => {
         if (resize.isScreenLg) {
-            setcount(12);
+            setCount(12);
         }
         if (!resize.isScreenLg && resize.isScreenMd) {
-            setcount(8);
+            setCount(8);
         }
         if (!resize.isScreenMd && resize.isScreenSm) {
-            setcount(5);
+            setCount(5);
         }
-    }, [resize.isScreenLg, resize.isScreenMd, resize.isScreenSm])
+    }, [resize.isScreenLg, resize.isScreenMd, resize.isScreenSm, cards, resize.width])
 
     if (showCards === cards) {
         setAllMovies(true);
@@ -45,7 +45,7 @@ function MoviesCardList(props) {
         if (!resize.isScreenMd && resize.isScreenSm) {
             countAdd = 2
         }
-        setcount(count + countAdd);
+        setCount(count + countAdd);
     }
 
     return (
