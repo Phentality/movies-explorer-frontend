@@ -106,9 +106,9 @@ function App() {
           <Route path="/movies" element={<ProtectedRoute loggedIn={loggedIn} component={Movies} movies={allMovies} />} />
           <Route path="/saved-movies" element={<ProtectedRoute loggedIn={loggedIn} component={SavedMovies} movies={allMovies} />} />
           <Route path="/profile" element={<ProtectedRoute loggedIn={loggedIn} errorMessage={profileErrorMessage} onUpdateUser={editProfile} component={Profile} handleLogOut={handleLogOut} />} />
+          <Route path="/not-found" element={<ProtectedRoute loggedIn={loggedIn} component={NotFound} />} />
           <Route path="/signup" element={<Register handleLogin={handleLogin} />} />
           <Route path="/signin" element={<Login handleLogin={handleLogin} />} />
-          <Route path="/not-found" element={<NotFound />} />
           <Route path="*" element={<Navigate to="/not-found" />} />
         </Routes>
         <Footer />
