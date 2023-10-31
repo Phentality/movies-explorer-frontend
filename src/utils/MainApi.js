@@ -84,7 +84,7 @@ class Api {
 }
 
 const api = new Api({
-    baseUrl: 'https://api.phental.nomoredomainsrocks.ru'
+    baseUrl: 'http://localhost:3001' //'https://api.phental.nomoredomainsrocks.ru'
 });
 
 export default api;

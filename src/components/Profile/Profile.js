@@ -7,9 +7,11 @@ function Profile(props) {
     const [name, setName] = React.useState('');
     const [email, setEmail] = React.useState('');
     const [same, setSame] = React.useState(true);
+    const [confirmMessage, setConfirmMessage] = React.useState('');
 
     const handleEditButton = () => {
         setOnEdit(true);
+        setConfirmMessage('');
     }
 
     React.useEffect(() => {
@@ -34,8 +36,11 @@ function Profile(props) {
                 email,
             });
             setOnEdit(false);
+            setConfirmMessage('Данные успешно изменены');
+
         }
         catch {
+            setConfirmMessage('');
             setOnEdit(true);
         }
     }
@@ -60,7 +65,7 @@ function Profile(props) {
                     <h2 className='profile__text profile__static-text'>E-mail</h2>
                     <h2 className='profile__text'>{currentUser.email}</h2>
                 </div>
-                <h2 className={`register__none ${props.errorMessage !== '' ? 'register__error-message' : ''}`}>{props.errorMessage}</h2>
+                <h2 className={`register__none ${confirmMessage !== '' ? 'register__confirm-message' : ''} ${props.errorMessage !== '' ? 'register__error-message' : ''}`}>{confirmMessage}{props.errorMessage}</h2>
                 <div className='profile__button-container'>
                     <button className='profile__button profile__edit-button' onClick={handleEditButton}>Редактировать</button>
                     <button className='profile__button profile__logout-button' onClick={props.handleLogOut}>Выйти из аккаунта</button>
