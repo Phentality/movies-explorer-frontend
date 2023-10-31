@@ -20,20 +20,17 @@ function SavedMovies(props) {
 
   React.useEffect(() => {
     api.getSavedMovies()
-    .then((data) => {
-      setMovies(data);
-      setAllSavedMovies(data);
-    })
+      .then((data) => {
+        setMovies(data);
+        setAllSavedMovies(data);
+      })
+    localStorage.setItem('savedSearch', '');
   }, [])
-
-  React.useEffect(() => {
-    localStorage.setItem('savedMovies', JSON.stringify(movies));
-  }, [movies])
 
   function changeShortMovie() {
     setShortMovie(!shortMovie);
   }
-  
+
   React.useEffect(() => {
     localStorage.setItem('savedSearchFilter', shortMovie);
   }, [shortMovie]);
@@ -95,8 +92,6 @@ function SavedMovies(props) {
         }
         return false
       })
-      localStorage.setItem('savedShortMovies', JSON.stringify(shortMovies))
-      localStorage.setItem('savedMovies', JSON.stringify(searchResponse));
       setMovies(searchResponse);
       if (shortMovie) {
         if (shortMovies.length === 0) {

@@ -63,7 +63,7 @@ function Movies(props) {
         }
         return false
       })
-      localStorage.setItem('shortMovies', JSON.stringify(shortMovies))
+      localStorage.setItem('shortMovies', JSON.stringify(shortMovies));
       localStorage.setItem('movies', JSON.stringify(searchResponse));
       setError('');
       setMovies(searchResponse);
