@@ -8,6 +8,7 @@
 .profile__title {
     max-width: 204px;
     margin: 0 auto 106px;
+    text-align: center;
     padding: 74px 0 0;
     font-family: inherit;
     font-size: 24px;
@@ -31,7 +32,7 @@
 }
 
 .profile__text {
-    max-width: 122px;
+    max-width: 160px;
     margin: 17px 0 16px;
     padding: 0;
     font-family: inherit;
@@ -55,7 +56,7 @@
     text-align: right;
     padding: 0;
     border: 0;
-    width: 122px;
+    width: 160px;
     margin: 17px 0 16px;
     box-sizing: border-box;
     background-color: transparent;
@@ -83,6 +84,21 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.profile__disabled-button {
+    background-color: #808080;
+}
+
+.profile__submit-button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.profile__disabled-button:hover {
+    opacity: 1;
+    cursor: default;
+}
+
 
 .profile__button-container {
     max-width: 410px;
@@ -119,11 +135,6 @@
 
 .profile__button:hover {
     opacity: 0.7;
-    cursor: pointer;
-}
-
-.profile__submit-button:hover {
-    opacity: 0.8;
     cursor: pointer;
 }
 

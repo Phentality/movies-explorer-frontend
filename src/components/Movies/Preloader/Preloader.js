@@ -1,8 +1,14 @@
 import React from 'react'
 
-const Preloader = () => {
+const Preloader = (props) => {
+    const isVisible = props.visibility;
+
+    const preloaderClassName = (
+        `${isVisible ? 'preloader' : 'preloader-none'}`
+    );
+
     return (
-        <div className="preloader">
+        <div className={preloaderClassName}>
             <div className="preloader__container">
                 <span className="preloader__round"></span>
             </div>

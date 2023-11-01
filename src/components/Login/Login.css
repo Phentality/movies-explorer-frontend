@@ -107,6 +107,32 @@
     cursor: pointer;
 }
 
+.login__button-disabled {
+    background-color: #808080;
+}
+
+.login__button-disabled:hover {
+    opacity: 1;
+    cursor: default;
+}
+
+.login__none {
+    display: none;
+}
+
+.login__error-message {
+    display: block;
+    max-width: 196px;
+    font-family: inherit;
+    text-align: center;
+    margin: 10px auto 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16.94px;
+    color: #EE3465;
+}
+
 .login__signup {
     max-width: 285px;
     display: flex;

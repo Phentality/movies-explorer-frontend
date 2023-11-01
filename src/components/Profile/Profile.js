@@ -1,57 +1,93 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-/*import { CurrentUserContext } from '../../contexts/CurrentUserContext';*/
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-function Profile() {
-    /*const currentUser = React.useContext(CurrentUserContext);*/
-    const navigate = useNavigate();
+function Profile(props) {
+    const currentUser = React.useContext(CurrentUserContext);
     const [onEdit, setOnEdit] = React.useState(false);
-
-    let currentUser = {
-        name: "Виталий",
-        email: "pochta@yandex.ru"
-    }
+    const [name, setName] = React.useState('');
+    const [email, setEmail] = React.useState('');
+    const [same, setSame] = React.useState(true);
+    const [confirmMessage, setConfirmMessage] = React.useState('');
 
     const handleEditButton = () => {
         setOnEdit(true);
+        setConfirmMessage('');
     }
 
-    const handleSubmitButton = () => {
-        setOnEdit(false);
+    React.useEffect(() => {
+        setName(currentUser.name);
+        setEmail(currentUser.email);
+    }, [currentUser]);
+
+
+    function handleChangeName(e) {
+        setName(e.target.value);
     }
 
-    const handleMainNav = () => {
-        navigate('/')
-      }
+    function handleChangeEmail(e) {
+        setEmail(e.target.value)
+    }
+
+    async function handleSubmit(e) {
+        try {
+            e.preventDefault();
+            await props.onUpdateUser({
+                name,
+                email,
+            });
+            setOnEdit(false);
+            setConfirmMessage('Данные успешно изменены');
+
+        }
+        catch {
+            setConfirmMessage('');
+            setOnEdit(true);
+        }
+    }
+
+    React.useEffect(() => {
+        if (name === currentUser.name && email === currentUser.email) {
+            setSame(true)
+        }
+        else {
+            setSame(false)
+        }
+    }, [currentUser.email, currentUser.name, email, name, onEdit]);
 
     const handleContent = () => {
         if (!onEdit) {
-            return (<><div className='profile__container'>
-                <h2 className='profile__text profile__static-text'>Имя</h2>
-                <h2 className='profile__text'>{currentUser.name}</h2>
-            </div>
+            return (<>
+                <div className='profile__container'>
+                    <h2 className='profile__text profile__static-text'>Имя</h2>
+                    <h2 className='profile__text'>{currentUser.name}</h2>
+                </div>
                 <div className='profile__container profile__without-border'>
                     <h2 className='profile__text profile__static-text'>E-mail</h2>
                     <h2 className='profile__text'>{currentUser.email}</h2>
                 </div>
+                <h2 className={`register__none ${confirmMessage !== '' ? 'register__confirm-message' : ''} ${props.errorMessage !== '' ? 'register__error-message' : ''}`}>{confirmMessage}{props.errorMessage}</h2>
                 <div className='profile__button-container'>
                     <button className='profile__button profile__edit-button' onClick={handleEditButton}>Редактировать</button>
-                    <button className='profile__button profile__logout-button' onClick={handleMainNav}>Выйти из аккаунта</button>
+                    <button className='profile__button profile__logout-button' onClick={props.handleLogOut}>Выйти из аккаунта</button>
                 </div></>)
         }
-        else { return (<><form>
-            <div className='profile__container'>
-                <h2 className='profile__text profile__static-text'>Имя</h2>
-                <input className='profile__input' value={currentUser.name} />
-            </div>
-            <div className='profile__container profile__without-border'>
-                <h2 className='profile__text profile__static-text'>E-mail</h2>
-                <input className='profile__input' value={currentUser.email}/>
-            </div>
-            <div className='profile__button-container'>
-                <button className="profile__submit-button" onClick={handleSubmitButton} aria-label="Сохранить" name="safe" value="">Сохранить</button>
-            </div>
-        </form></>) }
+        else {
+            return (<>
+                <form onSubmit={handleSubmit} noValidate>
+                    <div className='profile__container'>
+                        <h2 className='profile__text profile__static-text'>Имя</h2>
+                        <input className='profile__input' type="text" onChange={handleChangeName} value={name} />
+                    </div>
+                    <div className='profile__container profile__without-border'>
+                        <h2 className='profile__text profile__static-text'>E-mail</h2>
+                        <input className='profile__input' type="email" onChange={handleChangeEmail} value={email} />
+                    </div>
+                    <h2 className={`register__none ${props.errorMessage !== '' ? 'register__error-message' : ''}`}>{props.errorMessage}</h2>
+                    <div className='profile__button-container'>
+                        <button className={`profile__submit-button ${same ? 'profile__disabled-button' : ''}`} type='submit' aria-label="Сохранить" name="safe" disabled={same}>Сохранить</button>
+                    </div>
+                </form></>)
+        }
     }
     return (
         <main className='profile'>
