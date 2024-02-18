@@ -51,7 +51,7 @@
 
 Клонируйте репозиторий
 ```
-git clone https://github.com/Sattturday/movies-explorer-frontend.git
+git clone https://github.com/Phentality/movies-explorer-frontend.git
 ```
 Установите пакеты NPM
 ```
